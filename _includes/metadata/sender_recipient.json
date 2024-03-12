@@ -1,0 +1,260 @@
+[
+	{
+		"Sender": "Armen Carapetyan",
+		"Letters": "2",
+		"Recipient": "W. E. Hocking"
+	},
+	{
+		"Sender": "Harold Spivacke",
+		"Letters": "462",
+		"Recipient": "Armen Carapetyan"
+	},
+	{
+		"Sender": "Otto Kinkeldey",
+		"Letters": "9",
+		"Recipient": "Otto Kinkeldey"
+	},
+	{
+		"Sender": "Arnold Schmitz",
+		"Letters": "27",
+		"Recipient": "Otto Gombosi"
+	},
+	{
+		"Sender": "Knud Jeppesen",
+		"Letters": "9",
+		"Recipient": "Knud Jeppesen"
+	},
+	{
+		"Sender": "Erich H. Mueller von Asow",
+		"Letters": "2",
+		"Recipient": "Otto Ursprung"
+	},
+	{
+		"Sender": "Otto Ursprung",
+		"Letters": "2",
+		"Recipient": "Walter Gerstenberg"
+	},
+	{
+		"Sender": "Ralph Kirkpatrick",
+		"Letters": "9",
+		"Recipient": "Erich H. Mueller von Asow"
+	},
+	{
+		"Sender": "Manfred Bukofzer",
+		"Letters": "44",
+		"Recipient": "Edward Lowinsky"
+	},
+	{
+		"Sender": "Helen Hewitt",
+		"Letters": "2",
+		"Recipient": "Egon Wellesz"
+	},
+	{
+		"Sender": "Paul Henry Lang",
+		"Letters": "2",
+		"Recipient": "Helen Hewitt"
+	},
+	{
+		"Sender": "Oliver Strunk",
+		"Letters": "1",
+		"Recipient": "Percy A. Scholes"
+	},
+	{
+		"Sender": "Richard S. Hill",
+		"Letters": "15",
+		"Recipient": "Gustave Reese"
+	},
+	{
+		"Sender": "Heinrich Besseler",
+		"Letters": "4",
+		"Recipient": "Louise Dyer"
+	},
+	{
+		"Sender": "Louise Dyer",
+		"Letters": "4",
+		"Recipient": "Heinrich Besseler"
+	},
+	{
+		"Sender": "Otto Gombosi",
+		"Letters": "7",
+		"Recipient": "Richard S. Hill"
+	},
+	{
+		"Sender": "Harriette Carapetyan",
+		"Letters": "6",
+		"Recipient": "Hildegard Besseler"
+	},
+	{
+		"Sender": "Cornelis W. H. Lindenburg",
+		"Letters": "3",
+		"Recipient": "Paul Henry Lang"
+	},
+	{
+		"Sender": "Stanley Pargellis",
+		"Letters": "1",
+		"Recipient": "Curt Sachs"
+	},
+	{
+		"Sender": "Edward Lowinsky",
+		"Letters": "16",
+		"Recipient": "Oliver Strunk"
+	},
+	{
+		"Sender": "Gustave Reese",
+		"Letters": "2",
+		"Recipient": "Stanley Pargellis"
+	},
+	{
+		"Sender": "Joseph Smits van Waesberghe",
+		"Letters": "2",
+		"Recipient": "Joseph Schmidt-Görg"
+	},
+	{
+		"Sender": "Frank C. Campbell",
+		"Letters": "1",
+		"Recipient": "Corpus Scriptorum de Musica editors"
+	},
+	{
+		"Sender": "André Jurres",
+		"Letters": "5",
+		"Recipient": "John Ward"
+	},
+	{
+		"Sender": "R.J.A. Lagas",
+		"Letters": "1",
+		"Recipient": "Vereniging voor Nederlandse Muziekgeschiedenis"
+	},
+	{
+		"Sender": "Dragan Plamenac",
+		"Letters": "1",
+		"Recipient": "R.J.A. Lagas"
+	},
+	{
+		"Sender": "John Ward",
+		"Letters": "5",
+		"Recipient": "Gerhard Croll"
+	},
+	{
+		"Sender": "Clytus Gottwald",
+		"Letters": "1",
+		"Recipient": "Josephine Waters Bennett"
+	},
+	{
+		"Sender": "Gerhard Croll",
+		"Letters": "6",
+		"Recipient": "Clytus Gottwald"
+	},
+	{
+		"Sender": "Erwin R. Jacobi",
+		"Letters": "2",
+		"Recipient": "Gaston Allaire"
+	},
+	{
+		"Sender": "Donald J. Grout",
+		"Letters": "41",
+		"Recipient": "Dragan Plamenac"
+	},
+	{
+		"Sender": "Geneviève Thibault de Chambure",
+		"Letters": "115",
+		"Recipient": "Erwin R. Jacobi"
+	},
+	{
+		"Sender": "Barry S. Brook",
+		"Letters": "48",
+		"Recipient": "Donald J. Grout"
+	},
+	{
+		"Sender": "Hellmut Federhofer",
+		"Letters": "2",
+		"Recipient": "Geneviève Thibault de Chambure"
+	},
+	{
+		"Sender": "Louise Cuyler",
+		"Letters": "2",
+		"Recipient": "Eleanor Lawry"
+	},
+	{
+		"Sender": "Irving Broude",
+		"Letters": "4",
+		"Recipient": "Hellmut Federhofer"
+	},
+	{
+		"Sender": "Jan LaRue",
+		"Letters": "1",
+		"Recipient": "Barry S. Brook"
+	},
+	{
+		"Sender": "Secretary to Erwin Jacobi",
+		"Letters": "3",
+		"Recipient": "Irving Broude"
+	},
+	{
+		"Sender": "C. Welti",
+		"Letters": "2",
+		"Recipient": "Collective Editors"
+	},
+	{
+		"Sender": "Claude V. Palisca",
+		"Letters": "1",
+		"Recipient": "Jan LaRue"
+	},
+	{
+		"Sender": "Donald and Margaret Grout",
+		"Letters": "15",
+		"Recipient": "Harriette Carapetyan"
+	},
+	{
+		"Sender": "Alvin H. Johnson",
+		"Letters": "9",
+		"Recipient": "Claude V. Palisca"
+	},
+	{
+		"Sender": "Margaret Bent",
+		"Letters": "9",
+		"Recipient": "Armen and Harriette Carapetyan"
+	},
+	{
+		"Sender": "R. Bolderman",
+		"Letters": "1",
+		"Recipient": "Ernst Mohr"
+	},
+	{
+		"Sender": "Charles Hamm",
+		"Letters": "14",
+		"Recipient": "Margaret Bent"
+	},
+	{
+		"Sender": "Jo. C. Williamson",
+		"Letters": "3",
+		"Recipient": "Donald and Margaret Grout"
+	},
+	{
+		"Sender": "Bonnie Blackburn",
+		"Letters": "3",
+		"Recipient": "Alvin H. Johnson"
+	},
+	{
+		"Sender": "James Haar",
+		"Letters": "3",
+		"Recipient": "Richard Sherr"
+	},
+	{
+		"Sender": "Margaret Grout",
+		"Recipient": "James Haar",
+		"Letters": "2"
+	},
+	{
+		"Recipient": "Bonnie Blackburn",
+		"Letters": "27"
+	},
+	{
+		"Recipient": "Margaret Grout"
+	},
+	{
+		"Recipient": "Edward Lowinsky and Bonnie Blackburn"
+	},
+	{
+		"Recipient": "Margaret and Donald Grout"
+	}
+]
