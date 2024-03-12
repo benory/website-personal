@@ -11,7 +11,7 @@ nav: false
 	div.container.mt-5 {margin-left: 100px; min-width: 1250px;}
 	h1 { font-size: 40px; }
 	th { text-align: left; }
-	table.browse { min-width: 1250px;}
+	table.browse { min-width: 1000px;}
 	table.browse { margin-left: auto; margin-right: auto; } /* center table */
 	table.browse { border-collapse: collapse; } /* don't put gaps between cells */
 	table.browse th { background:skyblue;}
