@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://benory.github.io/website-personal//sitemap.xml
+Sitemap: https://benory.github.io/sitemap.xml
