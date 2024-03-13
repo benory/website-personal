@@ -22,7 +22,7 @@ My forthcoming article in the [Journal of the Alamire Foundation](https://www.br
 
 I'm developing a [database of concert programs of early music from ca. 1915–1960](https://www.concertsdatabase.org/){:target="_blank"}. This research has been generously supported by the Ora Frishberg Saloman Fund of the American Musicological Society.
 
-Another project examines the impact and legacy of the music publisher Armen Carapetyan (1908–1992), founder of the American Institute of Musicology. Over the past few years, I've compiled [a catalogue of over 900 letters to and from Carapetyan](/Carapetyan). See some [analysis of the catalogue](/Carapetyan_analysis).
+Another project examines the impact and legacy of the music publisher Armen Carapetyan (1908–1992), founder of the American Institute of Musicology. Over the past few years, I've compiled [a catalogue of over 900 letters to and from Carapetyan](../Carapetyan). See some [analysis of the catalogue](../Carapetyan_analysis).
  
 ### My dissertation
 

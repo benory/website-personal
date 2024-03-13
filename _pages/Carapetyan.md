@@ -28,7 +28,7 @@ nav: false
 
 <div id="search-interface"></div>
 
-[Analysis of the catalogue](/Carapetyan_analysis/)
+[Analysis of the catalogue](../Carapetyan_analysis/)
 
 <div id="list"></div>
 
