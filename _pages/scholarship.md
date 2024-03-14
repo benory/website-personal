@@ -28,8 +28,8 @@ Another project examines the impact and legacy of the music publisher Armen Cara
 
 My dissertation is embargoed until June 2024, at which point it will be accessible through [Stanford Libraries](https://searchworks.stanford.edu/view/14239635){:target="_blank"} and ProQuest Dissertation & Theses Global. But I'd be happy to share:
 
-+ You can [download my dissertation here](../research/Ory_Dissertation.pdf){:target="_blank"} (391 pp., 12.6 MB). Ask me for the uncompressed version.
-+ I've compiled [a list of errata](../research/Ory_Dissertation_Errata.pdf){:target="_blank"}. Let me know if you notice other typographical or substantive errors, and I'll credit you here.
++ You can [download my dissertation here](/research/Ory_Dissertation.pdf){:target="_blank"} (391 pp., 12.6 MB). Ask me for the uncompressed version.
++ I've compiled [a list of errata](/research/Ory_Dissertation_Errata.pdf){:target="_blank"}. Let me know if you notice other typographical or substantive errors, and I'll credit you here.
 
 #### Dissertation abstract
 
