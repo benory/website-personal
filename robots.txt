@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://benjaminory.com//sitemap.xml
+Sitemap: https://benjaminory.com/sitemap.xml
