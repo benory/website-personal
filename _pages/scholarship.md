@@ -11,7 +11,7 @@ bibliography: Dissertation.bib
 
 ### Sixteenth-century music
 
-I'm the founder and director of [The 1520s Project](https://www.1520s-project.org){:target="_blank"}, an open-source repository of music from the early sixteenth century. The project aims to address how, when, and where a radically new style of polyphonic music emerged in ca. 1520. The project currently features 375+ scores (roughly 350,000 notes). [Craig Sapp](https://music.stanford.edu/people/craig-sapp-0){:target="_blank"} serves as technical director for the project, and we collaborate closely with [Jesse Rodin](https://music.stanford.edu/people/jesse-rodin){:target="_blank"} and the [Josquin Research Project](https://josquin.stanford.edu){:target="_blank"}. Together, we've received a 2023–24 [Stanford VPDoR Large Propel Grant](https://propelgrants.stanford.edu/){:target="_blank"} for our joint collaboration. In Spring 2024, I won a Harvard [Villa I Tatti Fellowship in the Digital Humanities](https://itatti.harvard.edu/fellowship-digital-humanities){:target="_blank"} for The 1520s Project.
+I'm the founder and director of [The 1520s Project](https://www.1520s-project.org){:target="_blank"}, an open-source repository of music from the early sixteenth century. The project aims to address how, when, and where a radically new style of polyphonic music emerged in ca. 1520. The project currently features 400 scores (roughly 380,000 notes). [Craig Sapp](https://music.stanford.edu/people/craig-sapp-0){:target="_blank"} serves as technical director for the project, and we collaborate closely with [Jesse Rodin](https://music.stanford.edu/people/jesse-rodin){:target="_blank"} and the [Josquin Research Project](https://josquin.stanford.edu){:target="_blank"}. Together, we've received a 2023–24 [Stanford VPDoR Large Propel Grant](https://propelgrants.stanford.edu/){:target="_blank"} for our joint collaboration. In Spring 2024, I won a Harvard [Villa I Tatti Fellowship in the Digital Humanities](https://itatti.harvard.edu/fellowship-digital-humanities){:target="_blank"} for The 1520s Project.
 
 
 I’m editing a volume for the [Adrian Willaert collected-works edition](http://www.corpusmusicae.com/cmm/cmm_cc003.htm){:target="_blank"} with the American Institute of Musicology of motets that appeared up to the year 1534 in printed anthologies and manuscripts.
@@ -22,7 +22,7 @@ My recently published article in the [Journal of the Alamire Foundation](https:/
 
 ### Music historiography
 
-I'm developing a [database of concert programs of early music from ca. 1915–1960](https://www.concertsdatabase.org/){:target="_blank"}. This research has been generously supported by the Ora Frishberg Saloman Fund of the American Musicological Society.
+I'm developing a [database of concert programs of early music from ca. 1915–1960](https://www.concertsdatabase.org/){:target="_blank"}. This research has been generously supported by the Ora Frishberg Saloman Fund of the American Musicological Society and the Fonds Wetenschappelijk Onderzoek in Belgium.
 
 Another project examines the impact and legacy of the music publisher Armen Carapetyan (1908–1992), founder of the American Institute of Musicology. Over the past few years, I've compiled [a catalogue of over 900 letters to and from Carapetyan](../Carapetyan). See some [analysis of the catalogue](../Carapetyan_analysis).
  

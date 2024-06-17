@@ -16,6 +16,6 @@ social: true # includes social icons at the bottom of the page
 
 I received my Ph.D. in musicology from Stanford University in 2022 and have since served as visiting assistant professor in musicology at Williams College. My interests include sixteenth-century music, digital humanities, and the historiography of early music.
 
-I’m the founder and director of the digital humanities resource, [The 1520s Project](https://1520s-project.org){:target="_blank"}, an open-source repository of 375+ scores, ca. 1510–ca. 1540.
+I’m the founder and director of the digital humanities resource, [The 1520s Project](https://1520s-project.org){:target="_blank"}, an open-source repository of 400 scores, ca. 1510–ca. 1540.
 
 [See my CV](/assets/pdf/Ory_CV.pdf){:target="_blank"} for more details.

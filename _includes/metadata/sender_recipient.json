@@ -6,7 +6,7 @@
 	},
 	{
 		"Sender": "Harold Spivacke",
-		"Letters": "462",
+		"Letters": "465",
 		"Recipient": "Armen Carapetyan"
 	},
 	{
@@ -195,58 +195,62 @@
 		"Recipient": "Collective Editors"
 	},
 	{
-		"Sender": "Claude V. Palisca",
+		"Sender": "Eileen Southern",
 		"Letters": "1",
 		"Recipient": "Jan LaRue"
 	},
 	{
-		"Sender": "Donald and Margaret Grout",
+		"Sender": "Claude V. Palisca",
 		"Letters": "15",
 		"Recipient": "Harriette Carapetyan"
 	},
 	{
-		"Sender": "Alvin H. Johnson",
+		"Sender": "Donald and Margaret Grout",
 		"Letters": "9",
 		"Recipient": "Claude V. Palisca"
 	},
 	{
-		"Sender": "Margaret Bent",
+		"Sender": "Alvin H. Johnson",
 		"Letters": "9",
 		"Recipient": "Armen and Harriette Carapetyan"
 	},
 	{
-		"Sender": "R. Bolderman",
+		"Sender": "Margaret Bent",
 		"Letters": "1",
 		"Recipient": "Ernst Mohr"
 	},
 	{
-		"Sender": "Charles Hamm",
+		"Sender": "R. Bolderman",
 		"Letters": "14",
 		"Recipient": "Margaret Bent"
 	},
 	{
-		"Sender": "Jo. C. Williamson",
+		"Sender": "Charles Hamm",
 		"Letters": "3",
 		"Recipient": "Donald and Margaret Grout"
 	},
 	{
-		"Sender": "Bonnie Blackburn",
+		"Sender": "Jo. C. Williamson",
 		"Letters": "3",
 		"Recipient": "Alvin H. Johnson"
 	},
 	{
-		"Sender": "James Haar",
+		"Sender": "Bonnie Blackburn",
 		"Letters": "3",
 		"Recipient": "Richard Sherr"
 	},
 	{
-		"Sender": "Margaret Grout",
+		"Sender": "James Haar",
 		"Recipient": "James Haar",
 		"Letters": "2"
 	},
 	{
+		"Sender": "Margaret Grout",
 		"Recipient": "Bonnie Blackburn",
 		"Letters": "27"
+	},
+	{
+		"Recipient": "Eileen Southern"
 	},
 	{
 		"Recipient": "Margaret Grout"
