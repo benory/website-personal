@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Digitial Humanities Fellow, <a href='https://itatti.harvard.edu/'>Villa I Tatti</a>, Harvard University's Center for Italian Renaissance Studies.<br>
+subtitle: Digitial Humanities Fellow, <a href='https://itatti.harvard.edu/'>Villa I Tatti</a>, Harvard University's Center for Italian Renaissance Studies.
 
 profile:
   align: right
