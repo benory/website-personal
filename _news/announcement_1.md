@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My contribution on [Edward Lowinsky and the 1971 Josquin-Festival Conference](https://journals.qucosa.de/troja/article/view/3867/3746) has been published in the [2021 Troja Jahrbuch](https://doi.org/10.25371/troja.v2021), "Josquin-Bilder im langen 20. Jahrhundert."
+My contribution on [Edward Lowinsky and the 1971 Josquin-Festival Conference](https://journals.qucosa.de/troja/article/view/3867/3746) has been published in the 2021 Troja Jahrbuch, "Josquin-Bilder im langen 20. Jahrhundert."
