@@ -11,30 +11,27 @@ bibliography: Dissertation.bib
 
 ### Sixteenth-century music
 
-I'm the founder and director of [The 1520s Project](https://www.1520s-project.org){:target="_blank"}, an open-source repository of music from the early sixteenth century. The project aims to address how, when, and where a radically new style of polyphonic music emerged in ca. 1520. The project currently features 450 scores (roughly 430,000 notes). [Craig Sapp](https://music.stanford.edu/people/craig-sapp-0){:target="_blank"} serves as technical director for the project, and we collaborate closely with [Jesse Rodin](https://music.stanford.edu/people/jesse-rodin){:target="_blank"} and the [Josquin Research Project](https://josquin.stanford.edu){:target="_blank"}. Together, we've received a 2023–24 [Stanford VPDoR Large Propel Grant](https://propelgrants.stanford.edu/){:target="_blank"} for our joint collaboration. In 2024 I won a Harvard [Villa I Tatti Fellowship in the Digital Humanities](https://itatti.harvard.edu/fellowship-digital-humanities){:target="_blank"} for The 1520s Project.
+I'm the founder and director of [The 1520s Project](https://www.1520s-project.org){:target="_blank"}, an open-source repository of music from the early sixteenth century. The project aims to address how, when, and where a radically new style of polyphonic music emerged in ca. 1520. The project features 450 scores (roughly 430,000 notes). [Craig Sapp](https://music.stanford.edu/people/craig-sapp-0){:target="_blank"} serves as technical director for the project, and we collaborate closely with [Jesse Rodin](https://music.stanford.edu/people/jesse-rodin){:target="_blank"} and the [Josquin Research Project](https://josquin.stanford.edu){:target="_blank"}. Together, we've received a 2023–24 [Stanford VPDoR Large Propel Grant](https://propelgrants.stanford.edu/){:target="_blank"} for our joint collaboration. In 2024 I won a Harvard [Villa I Tatti Fellowship in the Digital Humanities](https://itatti.harvard.edu/fellowship-digital-humanities){:target="_blank"} for The 1520s Project.
 
-I’m editing a volume for the [Adrian Willaert collected-works edition](http://www.corpusmusicae.com/cmm/cmm_cc003.htm){:target="_blank"} with the American Institute of Musicology of motets that appeared up to the year 1534 in printed anthologies and manuscripts.
+I’m also editing a volume of motets for the [Adrian Willaert collected-works edition](http://www.corpusmusicae.com/cmm/cmm_cc003.htm){:target="_blank"} with the American Institute of Musicology.
 
-My recently published article in the [Journal of the Alamire Foundation](https://www.brepols.net/series/jaf){:target="_blank"}, titled “[A Motet Wrongly Attributed to Adrian Willaert](https://www.brepolsonline.net/doi/10.1484/J.JAF.5.137256){:target="_blank"},” builds on findings from my volume for the Willaert edition to describe a problematic scholarly tendency to assume that an attribution in a given source can apply to works other than the one to which it is attached. Closer examination of _Nigra sum_ makes clear that it is---contrary to what we've thought---a three-voice motet by an anonymous composer, with two _si placet_ (additional) voices added later.
+My article in the _Journal of the Alamire Foundation_, titled “[A Motet Wrongly Attributed to Adrian Willaert](https://www.brepolsonline.net/doi/10.1484/J.JAF.5.137256){:target="_blank"},” builds on findings from my volume for the Willaert edition to describe a problematic scholarly tendency to assume that an attribution in a given source can apply to works other than the one to which it is attached. Closer examination of _Nigra sum_ makes clear that it is (contrary to what we've thought) a three-voice motet by an anonymous composer, with two _si placet_, or additional, voices added later.
 
 <br>
 
 ### Music historiography
 
+I have forthcoming articles in the _Journal of the American Musicological Society_ and the _Journal of Musicology_ on Edward Lowinsky and the _New Josquin Edition_, and on Armen Carapetyan and the American Institute of Musicology, respectively. My article on Carapetyan builds on a catalogue I've compiled of [more than 900 letters to and from the music publisher](../Carapetyan).
+
 I'm developing a [database of concert programs of early music from ca. 1915–1960](https://www.concertsdatabase.org/){:target="_blank"}. This research has been generously supported by the Ora Frishberg Saloman Fund of the American Musicological Society and the Fonds Wetenschappelijk Onderzoek in Belgium.
 
-Another project examines the impact and legacy of the music publisher Armen Carapetyan (1908–1992), founder of the American Institute of Musicology. Over the past few years, I've compiled [a catalogue of over 900 letters to and from Carapetyan](../Carapetyan). See some [analysis of the catalogue](../Carapetyan_analysis).
- 
 <br>
 
-## My dissertation
+### My dissertation
 
-My dissertation is [accessible here through Stanford Libraries](https://purl.stanford.edu/gb578zc4005){:target="_blank"} and ProQuest Dissertation & Theses Global.
-+ I've compiled [a list of errata](/research/Ory_Dissertation_Errata.pdf){:target="_blank"}. Let me know if you notice other typographical or substantive errors, and I'll credit you here.
+My dissertation is [accessible here through Stanford Libraries](https://purl.stanford.edu/gb578zc4005){:target="_blank"} and ProQuest Dissertation & Theses Global. I've also compiled [a list of errata](/research/Ory_Dissertation_Errata.pdf){:target="_blank"}.
 
-<br>
-
-#### Dissertation abstract
+#### Abstract
 
 This dissertation takes as its point of departure a problematic historiographical tradition. Even while recognizing that the death of the famous composer Josquin des Prez (1450–1521) marked a stylistic turning point, scholars working in Germany in the early twentieth century characterized the decades that followed, ca. 1520–50, as an aesthetic retrenchment, overstating Josquin’s influence and unwittingly lumping into the same generation sixteenth-century musicians who in fact worked at different times and in different stylistic idioms.
 

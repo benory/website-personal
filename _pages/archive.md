@@ -5,9 +5,7 @@ permalink: /archive/
 nav: true
 ---
 
-Over the past few years, I've collected a number of archival documents that pertain to the history of musicology. I'd be happy to provide high-quality, publication-ready scans of these materials.
-
-My archive includes pages from a scrapbook of publicity materials, reviews, and correspondence relating to Gustave Reese's  _Music in the Middle Ages_ (1940), the original copy of Walter Gerstenberg's unpublished Habilitationsschrift, "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the collected papers for Peter Gradenwitz (1910–2001), a German-Israeli musicologist.
+My collection includes a number of archival documents that pertain to the history of musicology. I'd be happy to provide high-quality, publication-ready scans of these materials. It includes pages from a scrapbook of publicity materials for Gustave Reese's  _Music in the Middle Ages_ (1940), the original copy of Walter Gerstenberg's unpublished Habilitationsschrift, "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the collected papers for Peter Gradenwitz (1910–2001), a German-Israeli musicologist.
 
 <div id="search-interface"></div>
 <div id="list"></div>
