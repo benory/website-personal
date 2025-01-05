@@ -830,5 +830,27 @@
 		"Copyright Details": "Gerstenberg died 26 October 1988",
 		"Permissions": "yes",
 		"Permissions Granter": "Susanne Gerstenberg"
+	},
+	{
+		"Series": "8",
+		"Folder": "1",
+		"Series Description": "Offprints",
+		"Folder Description": "Four Signed Offprints by Thrasybulos G. Georgiades",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "Libreria Antiquaria Gozzini",
+		"Copyright": "yes"
+	},
+	{
+		"Series": "8",
+		"Folder": "2",
+		"Series Description": "Offprints",
+		"Folder Description": "Signed Offprint by Walter Gerstenberg",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, buchfundus-berlin",
+		"Copyright": "yes"
 	}
 ]
