@@ -37,7 +37,14 @@ function displayBrowseTable(data, selector) {
 		console.error(`Error: cannot find ${selector} element to display work table`);
 		return;
 	}
-	let headings = [INDEX_Date, INDEX_C_Address, INDEX_C_Country, INDEX_Sender, INDEX_Recipient, INDEX_Info, INDEX_Archive, INDEX_Arch_Sig];
+	let headings = [
+	  INDEX_Date,
+	  "Address (Country)",
+	  INDEX_Sender,
+	  INDEX_Recipient,
+	  INDEX_Info,
+	  "Archival Signature"
+	];
 	let contents = "";
 	contents += "<table class='browse'>\n";
 	contents += "<thead>\n";
@@ -71,23 +78,38 @@ function makeTableHeader(headings) {
 function makeTableBody(headings, data) {
 	let output = "";
 	searchCount = 0;
-	for (let i=0; i<data.length; i++) {
+	for (let i = 0; i < data.length; i++) {
 		let entry = data[i];
 		output += "<tr>";
-		for (let i=0; i<headings.length; i++) {
+
+		for (let j = 0; j < headings.length; j++) {
 			let value = "";
-			if (typeof entry[headings[i]] !== "undefined") {
-				value = entry[headings[i]];
+
+			switch (headings[j]) {
+				case "Address (Country)":
+					const address = entry[INDEX_C_Address] || "";
+					const country = entry[INDEX_C_Country] || "";
+					value = `${address}${country ? " (" + country + ")" : ""}`;
+					break;
+
+				case "Archival Signature":
+					const archive = entry[INDEX_Archive] || "";
+					const sig = entry[INDEX_Arch_Sig] || "";
+					value = `${archive}${sig ? ", " + sig : ""}`;
+					break;
+
+				default:
+					value = entry[headings[j]] || "";
+					break;
 			}
-			output += "<td>";
-			output += value;
-			output += "</td>";
+
+			output += `<td>${value}</td>`;
 		}
+
 		output += "</tr>\n";
 		searchCount++;
 	}
 	return output;
-
 }
 
 
