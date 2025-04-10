@@ -1,0 +1,354 @@
+<script>
+
+//////////////////////////////
+//
+// buildSearchInterface --
+//
+
+function buildSearchInterface(data, selector) {
+	if (!selector) {
+		selector = "#search-interface";
+	}
+	let element = document.querySelector(selector);
+	if (!element) {
+		console.error(`Error: cannot find ${selector} element to create search interface`);
+		return;
+	}
+
+	let output = "";
+	output += buildSenderSelect(data);
+	output += buildRecipientSelect(data); 
+	output += buildYearSelect(data);
+	element.innerHTML = output;
+}
+
+
+//////////////////////////////
+//
+// displayBrowseTable --
+//
+
+function displayBrowseTable(data, selector) {
+	if (!selector) {
+		selector = "#list";
+	}
+	let element = document.querySelector(selector);
+	if (!element) {
+		console.error(`Error: cannot find ${selector} element to display work table`);
+		return;
+	}
+	let headings = [INDEX_Date, INDEX_C_Address, INDEX_C_Country, INDEX_Sender, INDEX_Recipient, INDEX_Info, INDEX_Archive, INDEX_Arch_Sig];
+	let contents = "";
+	contents += "<table class='browse'>\n";
+	contents += "<thead>\n";
+	contents += makeTableHeader(headings);
+	contents += "</thead>\n";
+	contents += "<tbody>\n";
+	contents += makeTableBody(headings, data);
+	contents += "</tbody>\n";
+	contents += "</table>\n";
+	element.innerHTML = contents;
+
+	displaySearchCount(searchCount);
+}
+
+//////////////////////////////
+//
+// makeTableHeader -- Generate HTML content for browse table header.
+//
+
+function makeTableHeader(headings) {
+	let output = `<th>${headings.join("</th><th>")}</th>\n`;
+	return output;
+}
+
+
+//////////////////////////////
+//
+// makeTableBody -- Generate HTML content for browse table's body.
+//
+
+function makeTableBody(headings, data) {
+	let output = "";
+	searchCount = 0;
+	for (let i=0; i<data.length; i++) {
+		let entry = data[i];
+		output += "<tr>";
+		for (let i=0; i<headings.length; i++) {
+			let value = "";
+			if (typeof entry[headings[i]] !== "undefined") {
+				value = entry[headings[i]];
+			}
+			output += "<td>";
+			output += value;
+			output += "</td>";
+		}
+		output += "</tr>\n";
+		searchCount++;
+	}
+	return output;
+
+}
+
+
+
+
+//////////////////////////////
+//
+// buildSenderSelect --
+//
+
+function buildSenderSelect(data) {
+	let counter = {};
+	let sum = data.length;
+	for (let i=0; i<sum; i++) {
+		let entry = data[i];
+		let sender = entry[INDEX_Sender];
+		if (!sender) {
+			console.error("WARNING: ", entry, " DOES NOT HAVE A SENDER");
+			continue;
+		}
+		counter[sender] = (counter[sender] === undefined) ? 1 : counter[sender] + 1;
+	}
+
+	let slist = Object.keys(counter).sort();
+	let senderCount = slist.length;
+	let output = "<select class='sender' onchange='doSearch()'>\n";
+	output += `<option value="">Any sender [${senderCount}]</option>`;
+	for (let i=0; i<slist.length; i++) {
+		let name = slist[i];
+		let count = counter[slist[i]];
+		output += `<option value="${name}">${name} (${count})</option>`;
+	}
+	output += "</select>\n";
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// buildRecipientSelect --
+//
+
+function buildRecipientSelect(data) {
+	let counter = {};
+	let sum = data.length;
+	for (let i=0; i<sum; i++) {
+		let entry = data[i];
+		let recipient = entry[INDEX_Recipient];
+		if (!recipient) {
+			console.error("WARNING: ", entry, " DOES NOT HAVE A SENDER");
+			continue;
+		}
+		counter[recipient] = (counter[recipient] === undefined) ? 1 : counter[recipient] + 1;
+	}
+
+	let rlist = Object.keys(counter).sort();
+	let recipientCount = rlist.length;
+	let output = "<select class='recipient' onchange='doSearch()'>\n";
+	output += `<option value="">Any recipient [${recipientCount}]</option>`;
+	for (let i=0; i<rlist.length; i++) {
+		let name = rlist[i];
+		let count = counter[rlist[i]];
+		output += `<option value="${name}">${name} (${count})</option>`;
+	}
+	output += "</select>\n";
+	return output;
+}
+
+
+//////////////////////////////
+//
+// buildYearSelect --
+//
+
+function buildYearSelect(data) {
+	let counter = {};
+	let sum = data.length;
+	for (let i=0; i<sum; i++) {
+		let entry = data[i];
+		let year = entry[INDEX_Year];
+		if (!year) {
+			console.error("WARNING: ", entry, " DOES NOT HAVE A YEAR");
+			continue;
+		}
+		counter[year] = (counter[year] === undefined) ? 1 : counter[year] + 1;
+	}
+
+	let ylist = Object.keys(counter).sort();
+	let yearCount = ylist.length;
+	let output = "<select class='year' onchange='doSearch()'>\n";
+	output += `<option value="">Any year [${yearCount}]</option>`;
+	for (let i=0; i<ylist.length; i++) {
+		let year = ylist[i];
+		let count = counter[ylist[i]];
+		output += `<option value="${year}">${year} (${count})</option>`;
+	}
+	output += "</select>\n";
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// doSearch --
+//
+
+function doSearch(data) {
+	if (!data) {
+		data = METADATA;
+	}
+
+	let searchInterface = document.querySelector("#search-interface");
+	if (!searchInterface) {
+		console.log("Problem finding search interface");
+		return;
+	}
+
+	let senderField = searchInterface.querySelector("select.sender");
+	if (!senderField) {
+		console.log("Problem finding sender field in search interface");
+		return;
+	}
+	let senderQuery = senderField.value;
+
+	let recipientField = searchInterface.querySelector("select.recipient");
+	if (!recipientField) {
+		console.log("Problem finding recipient field in search interface");
+		return;
+	}
+	let recipientQuery = recipientField.value; 
+
+	let yearField = searchInterface.querySelector("select.year");
+	if (!yearField) {
+		console.log("Problem finding year field in search interface");
+		return;
+	}
+	let yearQuery = yearField.value; 
+
+	if (senderQuery) {
+		let tempdata = [];
+		for (let i=0; i<data.length; i++) {
+			let entry = data[i];
+			let sender = entry[INDEX_Sender];
+			if (sender === senderQuery) {
+				tempdata.push(entry);
+			}
+		}
+		data = tempdata;
+	}
+
+	if (recipientQuery) {
+		let tempdata = [];
+		for (let i=0; i<data.length; i++) {
+			let entry = data[i];
+			let recipient = entry[INDEX_Recipient];
+			if (recipient == recipientQuery) {
+				tempdata.push(entry);
+			}
+		}
+		data = tempdata;
+	}
+
+	if (yearQuery) {
+		let tempdata = [];
+		for (let i=0; i<data.length; i++) {
+			let entry = data[i];
+			let year = entry[INDEX_Year];
+			if (year == yearQuery) {
+				tempdata.push(entry);
+			}
+		}
+		data = tempdata;
+	}
+
+	displayBrowseTable(data);
+}
+
+//////////////////////////////
+//
+// FreeTextSearch --  Search for any text within the browse table and hide
+//    rows that do not have the searched text.
+//
+
+function FreeTextSearch(query) {
+	let tr = document.querySelectorAll("#list tbody tr");
+	let input = document.querySelector("#input");
+
+	// Use query from the input box if not provided
+	if (query) {
+		input.value = query;
+	} else {
+		query = input.value;
+	}
+
+	// If query is empty, show all rows and count them
+	if (!query) {
+		displaySearchCount(tr.length);
+		showAllBrowseRows();
+		return;
+	}
+
+	// Function to remove accents from characters
+	function removeAccents(str) {
+		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	}
+
+	// Build regex that matches both accented and non-accented characters
+	let regexPattern = query.split("").map(char => {
+		let charWithoutAccent = removeAccents(char);
+		return `[${char}${charWithoutAccent}]`;
+	}).join("");
+
+	let regex = new RegExp(regexPattern, 'i'); // case-insensitive
+
+	let searchCount = 0;
+
+	for (let i = 0; i < tr.length; i++) {
+		let rowText = tr[i].innerText;
+
+		if (regex.test(rowText)) {
+			tr[i].style.display = "";
+			searchCount++;
+		} else {
+			tr[i].style.display = "none";
+		}
+	}
+
+	displaySearchCount(searchCount);
+}
+
+//////////////////////////////
+//
+// showAllBrowseRows -- Used to display all rows (again) in browse table when
+//    the free-text search is not being used.
+//
+
+function showAllBrowseRows() {
+	let tr = document.querySelectorAll("#list tbody tr");
+	for (let i=0; i<tr.length; i++) {
+		tr[i].style.display = "";
+	}
+}
+
+//////////////////////////////
+//
+// displaySearchCount --
+//
+
+function displaySearchCount(count) {
+	let output = "";
+	if (count == 1) {
+		output = `[${count} result]`;
+	} else {
+		output = `[${count} results]`;
+	}
+	let searchCountElement = document.querySelector("#search-count");
+	if (searchCountElement) {
+		searchCountElement.innerHTML = output;
+	}
+}
+
+</script>

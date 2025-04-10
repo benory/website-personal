@@ -1,0 +1,143 @@
+<style>
+
+table {
+	font: 400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+h1 { font-size: 40px; }
+th { text-align: left; }
+
+table.browse {
+  border-collapse: collapse;
+  margin: 0 auto;
+  min-width: 1000px;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc; /* subtle outer border */
+}
+
+table.browse th,
+table.browse td {
+  border: 1px solid #e0e0e0; /* light gray cell borders */
+  padding: 5px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.browse th {
+  background-color: #e6f0fa; /* subtle, professional blue */
+  color: #003366; /* dark navy text */
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+}
+
+table.browse tr:nth-child(even) {
+  background-color: #f9f9f9; /* zebra striping */
+}
+
+table.browse tr:hover {
+  background-color: #f1f7ff; /* light blue on hover */
+}
+
+table.browse td:nth-child(1) {
+  white-space: nowrap;
+}
+
+#input {
+	background-image: url('/assets/img/searchicon.png'); /* Add a search icon to input */
+	background-position: 10px 12px; /* Position the search icon */
+	background-repeat: no-repeat; /* Do not repeat the icon image */
+	border: 1px solid #ddd; /* Add a grey border */
+	font-size: 16px; 
+	padding: 12px 20px 12px 40px; 
+	width: 25%; 
+}
+
+.page-wrapper {
+  width: 1250px;
+  margin: 0 auto;
+  transform: translateX(-250px); 
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#search-count{
+	padding-left: 20px;
+	padding-right: 50px;
+}
+
+#search-interface {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto; /* stays aligned to the right */
+}
+
+.page-header {
+	width: 1250px;
+	transform: translateX(-250px); 
+  text-align: center;
+  padding: 0px 0 20px 0; /* bottom padding */
+}
+
+.page-header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.description {
+	width: 1000px;
+	transform: translateX(-100px);
+	text-align: left;
+	font-size: 18px;
+	padding-bottom: 40px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.filter-bar input[type="text"] {
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+#search-interface {
+	align: right;
+}
+
+#search-interface select {
+  -webkit-appearance: none;  /* Safari/Chrome */
+  -moz-appearance: none;     /* Firefox */
+  appearance: none;          /* Standard */
+  
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  height: 38px;
+  max-width: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px; /* space for dropdown arrow */
+  box-sizing: border-box;
+}
+
+</style>
