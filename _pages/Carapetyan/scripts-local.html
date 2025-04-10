@@ -1,58 +1,4 @@
----
-layout: page
-permalink: /Carapetyan/
-nav: false
----
-
-<style>
-	table {
-		font: 400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-	}
-	div.container.mt-5 {margin-left: 100px; min-width: 1250px;}
-	h1 { font-size: 40px; }
-	th { text-align: left; }
-	table.browse { min-width: 1000px;}
-	table.browse { margin-left: auto; margin-right: auto; } /* center table */
-	table.browse { border-collapse: collapse; } /* don't put gaps between cells */
-	table.browse th { background:skyblue;}
-	table.browse td, table.browse th { padding-left: 2px; padding-top: 2px; padding: 2px}
-	table.browse tr:hover { background:#ff000011; }
-	a { text-decoration: none; }
-	#search-interface { margin-bottom: 30px; }
-	.wrapper {margin-left: 10px;}
-	table.browse td:nth-child(1)  {white-space: nowrap;}
-	table.browse td:nth-child(3) {white-space: nowrap;}
-	table.browse td:nth-child(6) {min-width: 250px}
-
-</style>
-
-<div id="search-interface"></div>
-
-[Analysis of the catalogue](../Carapetyan_analysis/)
-
-<div id="list"></div>
-
 <script>
-// vim: ts=3:nowrap
-
-let METADATA = [];
-let INDEX_Year		  = "Year";
-let INDEX_Date        = "Date";
-let INDEX_C_Address   = "Carapetyan Address";
-let INDEX_C_Country   = "Carapetyan Country";
-let INDEX_Sender      = "Sender";
-let INDEX_Recipient   = "Recipient";
-let INDEX_Info 		  = "Substance of Correspondence";
-let INDEX_Archive 	  = "Archive";
-let INDEX_Arch_Sig	  = "Archival Signature";
-
-document.addEventListener("DOMContentLoaded", function () {
-	METADATA = {% include metadata/correspondence.json %};
-	buildSearchInterface(METADATA, "#search-interface");
-	displayBrowseTable(METADATA, "#list"); 
-});
-
-
 
 //////////////////////////////
 //
@@ -102,6 +48,8 @@ function displayBrowseTable(data, selector) {
 	contents += "</tbody>\n";
 	contents += "</table>\n";
 	element.innerHTML = contents;
+
+	displaySearchCount(searchCount);
 }
 
 //////////////////////////////
@@ -122,6 +70,7 @@ function makeTableHeader(headings) {
 
 function makeTableBody(headings, data) {
 	let output = "";
+	searchCount = 0;
 	for (let i=0; i<data.length; i++) {
 		let entry = data[i];
 		output += "<tr>";
@@ -135,8 +84,10 @@ function makeTableBody(headings, data) {
 			output += "</td>";
 		}
 		output += "</tr>\n";
+		searchCount++;
 	}
 	return output;
+
 }
 
 
@@ -314,6 +265,90 @@ function doSearch(data) {
 	}
 
 	displayBrowseTable(data);
+}
+
+//////////////////////////////
+//
+// FreeTextSearch --  Search for any text within the browse table and hide
+//    rows that do not have the searched text.
+//
+
+function FreeTextSearch(query) {
+	let tr = document.querySelectorAll("#list tbody tr");
+	let input = document.querySelector("#input");
+
+	// Use query from the input box if not provided
+	if (query) {
+		input.value = query;
+	} else {
+		query = input.value;
+	}
+
+	// If query is empty, show all rows and count them
+	if (!query) {
+		displaySearchCount(tr.length);
+		showAllBrowseRows();
+		return;
+	}
+
+	// Function to remove accents from characters
+	function removeAccents(str) {
+		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	}
+
+	// Build regex that matches both accented and non-accented characters
+	let regexPattern = query.split("").map(char => {
+		let charWithoutAccent = removeAccents(char);
+		return `[${char}${charWithoutAccent}]`;
+	}).join("");
+
+	let regex = new RegExp(regexPattern, 'i'); // case-insensitive
+
+	let searchCount = 0;
+
+	for (let i = 0; i < tr.length; i++) {
+		let rowText = tr[i].innerText;
+
+		if (regex.test(rowText)) {
+			tr[i].style.display = "";
+			searchCount++;
+		} else {
+			tr[i].style.display = "none";
+		}
+	}
+
+	displaySearchCount(searchCount);
+}
+
+//////////////////////////////
+//
+// showAllBrowseRows -- Used to display all rows (again) in browse table when
+//    the free-text search is not being used.
+//
+
+function showAllBrowseRows() {
+	let tr = document.querySelectorAll("#list tbody tr");
+	for (let i=0; i<tr.length; i++) {
+		tr[i].style.display = "";
+	}
+}
+
+//////////////////////////////
+//
+// displaySearchCount --
+//
+
+function displaySearchCount(count) {
+	let output = "";
+	if (count == 1) {
+		output = `[${count} result]`;
+	} else {
+		output = `[${count} results]`;
+	}
+	let searchCountElement = document.querySelector("#search-count");
+	if (searchCountElement) {
+		searchCountElement.innerHTML = output;
+	}
 }
 
 </script>

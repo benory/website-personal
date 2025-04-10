@@ -1,0 +1,33 @@
+<script>
+
+let METADATA = [];
+let INDEX_Year		  = "Year";
+let INDEX_Date        = "Date";
+let INDEX_C_Address   = "Carapetyan Address";
+let INDEX_C_Country   = "Carapetyan Country";
+let INDEX_Sender      = "Sender";
+let INDEX_Recipient   = "Recipient";
+let INDEX_Info 		  = "Substance of Correspondence";
+let INDEX_Archive 	  = "Archive";
+let INDEX_Arch_Sig	  = "Archival Signature";
+
+let searchCount;
+
+function debounce(func, delay = 200) {
+	let timeout;
+	return function (...args) {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => func.apply(this, args), delay);
+	};
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	METADATA = {% include metadata/correspondence.json %};
+	buildSearchInterface(METADATA, "#search-interface");
+	displayBrowseTable(METADATA, "#list");
+
+	// Hook up the input box to the search function:
+	document.querySelector("#input").addEventListener("input", debounce(() => FreeTextSearch(), 200));
+});
+
+</script>
