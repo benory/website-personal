@@ -5,6 +5,16 @@ permalink: /archive/
 nav: true
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXTMJ5SQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9KXTMJ5SQR');
+</script>
+
 My collection includes a number of archival documents that pertain to the history of musicology. I'd be happy to provide high-quality, publication-ready scans of these materials. It includes pages from a scrapbook of publicity materials for Gustave Reese's  _Music in the Middle Ages_ (1940), the original copy of Walter Gerstenberg's unpublished Habilitationsschrift, "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the collected papers for Peter Gradenwitz (1910–2001), a German-Israeli musicologist.
 
 <div id="search-interface"></div>

@@ -7,6 +7,16 @@ nav: true
 
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXTMJ5SQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9KXTMJ5SQR');
+</script>
+
 [See my CV](../assets/pdf/Ory_CV.pdf){:target="_blank"} for more details.
 
 <!-- _pages/publications.md -->

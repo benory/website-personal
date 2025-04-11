@@ -8,6 +8,15 @@ bibliography: Dissertation.bib
 
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXTMJ5SQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9KXTMJ5SQR');
+</script>
 
 ### Sixteenth-century music
 
