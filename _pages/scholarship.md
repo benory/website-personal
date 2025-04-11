@@ -8,16 +8,6 @@ bibliography: Dissertation.bib
 
 ---
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXTMJ5SQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9KXTMJ5SQR');
-</script>
-
 ### Sixteenth-century music
 
 I'm the founder and director of [The 1520s Project](https://www.1520s-project.org){:target="_blank"}, an open-source repository of music from the early sixteenth century. The project aims to address how, when, and where a radically new style of polyphonic music emerged in ca. 1520. The project features 450 scores (roughly 430,000 notes). [Craig Sapp](https://music.stanford.edu/people/craig-sapp-0){:target="_blank"} serves as technical director for the project, and we collaborate closely with [Jesse Rodin](https://music.stanford.edu/people/jesse-rodin){:target="_blank"} and the [Josquin Research Project](https://josquin.stanford.edu){:target="_blank"}. Together, we've received a 2023–24 [Stanford VPDoR Large Propel Grant](https://propelgrants.stanford.edu/){:target="_blank"} for our joint collaboration. In 2024 I won a Harvard [Villa I Tatti Fellowship in the Digital Humanities](https://itatti.harvard.edu/fellowship-digital-humanities){:target="_blank"} for The 1520s Project.

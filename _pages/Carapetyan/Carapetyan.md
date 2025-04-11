@@ -4,16 +4,6 @@ permalink: /Carapetyan/
 nav: false
 ---
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXTMJ5SQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9KXTMJ5SQR');
-</script>
-
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
 {% include_relative scripts-listeners.html %}
