@@ -1,0 +1,21 @@
+<script>
+
+let METADATA = [];
+let INDEX_Series		= "Series";
+let INDEX_Folder        = "Folder";
+let INDEX_Series_Info   = "Series Description";
+let INDEX_Folder_Info   = "Folder Description";
+let INDEX_Scanned      	= "Scanned";
+let INDEX_Acquisition   = "Acquisition Information";
+let INDEX_Permissions   = "Permissions";
+let INDEX_Hidden		= "Hidden";
+let INDEX_URL			= "URL";
+let INDEX_Image			= "Image Available";
+
+document.addEventListener("DOMContentLoaded", function () {
+	METADATA = {% include archives/archives.json %};
+	buildSearchInterface(METADATA, "#search-interface");
+	displayBrowseTable(METADATA, "#list"); 
+});
+
+</script>
