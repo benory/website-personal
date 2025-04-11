@@ -1,57 +1,4 @@
----
-layout: page
-title: Ory's archive
-permalink: /archive/
-nav: true
----
-
-My collection includes a number of archival documents that pertain to the history of musicology. I'd be happy to provide high-quality, publication-ready scans of these materials. It includes pages from a scrapbook of publicity materials for Gustave Reese's  _Music in the Middle Ages_ (1940), the original copy of Walter Gerstenberg's unpublished Habilitationsschrift, "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the collected papers for Peter Gradenwitz (1910–2001), a German-Israeli musicologist.
-
-<div id="search-interface"></div>
-<div id="list"></div>
-
-<style>
-	table {
-		font: 400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-	}
-	div.container.mt-5 {margin-left: 100px; min-width: 1250px;}
-	h1 { font-size: 40px; }
-	th { text-align: left; }
-	table.browse { min-width: 1250px;}
-	table.browse { margin-left: auto; margin-right: auto; } /* center table */
-	table.browse { border-collapse: collapse; } /* don't put gaps between cells */
-	table.browse th { background:skyblue;}
-	table.browse td, table.browse th { padding-left: 2px; padding-top: 2px; padding: 2px}
-	table.browse tr:hover { background:#ff000011; }
-	a { text-decoration: none; }
-	#search-interface { margin-bottom: 30px; }
-	.wrapper {margin-left: 10px;}
-	table.browse td:nth-child(1)  {white-space: nowrap;}
-	table.browse td:nth-child(3) {white-space: nowrap;}
-	table.browse td:nth-child(6) {min-width: 250px}
-
-</style>
-
 <script>
-// vim: ts=3:nowrap
-
-let METADATA = [];
-let INDEX_Series		= "Series";
-let INDEX_Folder        = "Folder";
-let INDEX_Series_Info   = "Series Description";
-let INDEX_Folder_Info   = "Folder Description";
-let INDEX_Scanned      	= "Scanned";
-let INDEX_Acquisition   = "Acquisition Information";
-let INDEX_Permissions   = "Permissions";
-let INDEX_Hidden		= "Hidden";
-let INDEX_URL			= "URL";
-let INDEX_Image			= "Image Available";
-
-document.addEventListener("DOMContentLoaded", function () {
-	METADATA = {% include archives/archives.json %};
-	buildSearchInterface(METADATA, "#search-interface");
-	displayBrowseTable(METADATA, "#list"); 
-});
 
 //////////////////////////////
 //
@@ -95,7 +42,7 @@ function buildSeriesSelect(data) {
 
 	let slist = Object.keys(counter).sort();
 	let seriesCount = slist.length;
-	let output = "<select class='series' onchange='doSearch()'>\n";
+	let output = "<select class='series custom-select' onchange='doSearch()'>\n";
 	output += `<option value="">Any archival series [${seriesCount}]</option>`;
 	for (let i=0; i<slist.length; i++) {
 		let name = slist[i];
@@ -125,7 +72,7 @@ function buildImageSelect(data) {
 	}
 
 	let ilist = Object.keys(counter).sort();
-	let output = "<select class='image' onchange='doSearch()'>\n";
+	let output = "<select class='image custom-select' onchange='doSearch()'>\n";
 	output += `<option value="">Image available online?</option>`;
 	for (let i=0; i<ilist.length; i++) {
 		let name = ilist[i];
@@ -198,7 +145,6 @@ function makeTableBody(headings, data) {
 				}
 				if (value.match(";")){
 					value = value.replace(/(;)+/g, '<br />');
-					console.warn(value, "value");
 				}
 
 				if (URL){
