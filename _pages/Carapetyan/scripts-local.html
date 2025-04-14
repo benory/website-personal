@@ -70,6 +70,14 @@ function makeTableHeader(headings) {
 }
 
 
+function formatDate(dateStr) {
+	if (!dateStr) return "";
+	const [year, month, day] = dateStr.split("-").map(Number);
+	const date = new Date(year, month - 1, day);
+	const options = { day: 'numeric', month: 'long', year: 'numeric' };
+	return date.toLocaleDateString('en-GB', options); // e.g. 5 October 1945
+}
+
 //////////////////////////////
 //
 // makeTableBody -- Generate HTML content for browse table's body.
@@ -100,6 +108,9 @@ function makeTableBody(headings, data) {
 
 				default:
 					value = entry[headings[j]] || "";
+					if (headings[j] === INDEX_Date) {
+						value = formatDate(value);
+					}
 					break;
 			}
 
