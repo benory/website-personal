@@ -72,10 +72,25 @@ function makeTableHeader(headings) {
 
 function formatDate(dateStr) {
 	if (!dateStr) return "";
-	const [year, month, day] = dateStr.split("-").map(Number);
-	const date = new Date(year, month - 1, day);
-	const options = { day: 'numeric', month: 'long', year: 'numeric' };
-	return date.toLocaleDateString('en-GB', options); // e.g. 5 October 1945
+
+	let parts = dateStr.split("-");
+	let year = parseInt(parts[0]) || null;
+	let month = parts.length > 1 ? parseInt(parts[1]) : null;
+	let day = parts.length > 2 ? parseInt(parts[2]) : null;
+
+	if (!year) return "";
+
+	if (!month) {
+		return year.toString(); // Only year
+	}
+
+	if (!day) {
+		let date = new Date(year, month - 1);
+		return date.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+	}
+
+	let date = new Date(year, month - 1, day);
+	return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
 //////////////////////////////
