@@ -72,7 +72,25 @@ function makeTableHeader(headings) {
 
 function formatDate(dateStr) {
 	if (!dateStr) return "";
-	const [year, month, day] = dateStr.split("-").map(Number);
+
+	const parts = dateStr.split("-").map(Number);
+	const [year, month, day] = parts;
+
+	if (!year) return ""; // no valid year, can't display anything
+
+	// Only year is present
+	if (!month) {
+		return `${year}`;
+	}
+
+	// Year and month are present, but not day
+	if (!day) {
+		const date = new Date(year, month - 1);
+		const options = { month: 'long', year: 'numeric' };
+		return date.toLocaleDateString('en-GB', options); // e.g. October 1945
+	}
+
+	// Full date
 	const date = new Date(year, month - 1, day);
 	const options = { day: 'numeric', month: 'long', year: 'numeric' };
 	return date.toLocaleDateString('en-GB', options); // e.g. 5 October 1945
