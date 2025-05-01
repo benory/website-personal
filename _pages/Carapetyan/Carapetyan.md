@@ -14,7 +14,7 @@ nav: false
 
 <div class="description">This page serves as an appendix to my article "Financial Incentives for Music Scholarship: The Case of Armen Carapetyan and the American Institute of Musicology," which will be published by the <i>Journal of Musicology</i> in fall 2025. I am grateful to Bonnie Blackburn for carefully copyediting this catalogue. <br><br>Few figures were as consequential for the study of early music in the twentieth century as the music publisher Armen Carapetyan. In 1944 Carapetyan founded the American Institute of Musicology, an organization that over the past seventy years has published a wealth of fifteenth- and sixteenth-century music for the first time in modern notation. As my article shows, Carapetyan changed the course of musicological research by offering scholars significant monetary incentives to publish editions of repertoire he deemed worthy.<br><br>
 
-<a href="/assets/csv/Carapetyan_correspondence.csv" download>Download the dataset as a CSV file</a> (last updated {{ site.time | date: "%d %B %Y" }}).</div>
+<a href="/assets/csv/Carapetyan_correspondence.csv" download>Download the dataset as a CSV file</a> (last updated {{ site.data.Carapetyan.csv_metadata.last_updated }}).</div>
 
 <div class="page-wrapper">
   <div class="filter-bar">
