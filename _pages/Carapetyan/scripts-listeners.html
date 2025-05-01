@@ -22,7 +22,7 @@ function debounce(func, delay = 200) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	METADATA = {% include metadata/correspondence.json %};
+	METADATA = {% include metadata/Carapetyan_correspondence.json %};
 	buildSearchInterface(METADATA, "#search-interface");
 	displayBrowseTable(METADATA, "#list");
 
