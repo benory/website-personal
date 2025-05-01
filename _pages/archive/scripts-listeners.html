@@ -13,7 +13,7 @@ let INDEX_URL			= "URL";
 let INDEX_Image			= "Image Available";
 
 document.addEventListener("DOMContentLoaded", function () {
-	METADATA = {% include archives/archives.json %};
+	METADATA = {% include metadata/Ory_archives.json %};
 	buildSearchInterface(METADATA, "#search-interface");
 	displayBrowseTable(METADATA, "#list"); 
 });
