@@ -3,7 +3,7 @@ layout: page
 permalink: /research/
 title: research
 nav: true
-nav_order: 6
+nav_order: 2
 bibliography: Dissertation.bib
 
 ---
@@ -53,11 +53,21 @@ bibliography: Dissertation.bib
 </div><br>
 <div style="display: flex; align-items: flex-start; gap: 16px; margin-top: 24px;">
   <p>
-    <b>My postdoctoral project</b> at KU Leuven examines important—if little studied—performances of medieval and Renaissance music that took place during the early twentieth century. These performances were critical for the development of the discipline of music history and for the formation of our modern, early-music canon.<br><br>Over the next few years, I'll be examining concert programs held in archives in Germany, the Netherlands, and Belgium, which will enable me to build a <a href="https://www.concertsdatabase.org/" target="_blank">database of performances from ca. 1915–1960</a>. This research is funded by the <a href="https://fwo.be/en/" target="_blank">Fonds Wetenschappelijk Onderzoek</a> in Belgium and has also been generously supported by the <a href="https://www.amsmusicology.org/saloman/">Ora Frishberg Saloman Fund</a> of the American Musicological Society.
+    <b>My postdoctoral project at KU Leuven</b> examines important—if little studied—performances of medieval and Renaissance music that took place during the early twentieth century. These performances were critical for the development of the discipline of music history and for the formation of our modern, early-music canon.<br><br>Over the next few years, I'll be examining concert programs held in archives in Germany, the Netherlands, and Belgium, which will enable me to build a <a href="https://www.concertsdatabase.org/" target="_blank">database of performances from ca. 1915–1960</a>. This research is funded by the <a href="https://fwo.be/en/" target="_blank">Fonds Wetenschappelijk Onderzoek</a> in Belgium and has also been generously supported by the <a href="https://www.amsmusicology.org/saloman/">Ora Frishberg Saloman Fund</a> of the American Musicological Society.
   </p>
 </div>
-
-    
+<div style="display: flex; align-items: flex-start; gap: 16px; margin-top: 24px;">
+  <p>
+    I collect <b><a href="../archive">archival materials relating to the history of musicology</a></b>. My collection includes pages from a scrapbook of publicity materials for Gustave Reese's <i>Music in the Middle Ages</i> (1940), the original copy of Walter Gerstenberg's unpublished Habilitationsschrift, "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the collected papers for Peter Gradenwitz (1910–2001), a German-Israeli musicologist. I'd be happy to provide high-quality, publication-ready scans of these materials.
+  </p>
+  <a href="../archive" target="_blank" style="display: inline-block;">
+    <img src="/assets/img/archive.png" alt="Archive" width="300" style="
+      border-radius: 8px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+      object-fit: cover; 
+      max-height: 400px;" />
+  </a>
+</div>
 
 <br>
 

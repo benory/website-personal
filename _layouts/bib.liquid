@@ -40,8 +40,6 @@
 
   <!-- Entry bib key -->
   <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
-    <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -127,32 +125,23 @@
       {% endif %}
     </div>
 
-    <!-- Journal/Book title and date -->
-    {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
-    {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+    <div class="periodical">
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{entry.journal}}</em>{% endcapture %}
-    {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{entry.booktitle}}</em> {% endcapture %}
-    {% elsif thesis contains entry.type %}
-      {% capture entrytype %}<em>{{entry.school}}</em> {% endcapture %}
-    {% else %}
-      {% capture entrytype %}{% endcapture %}
+      {% if entry.reviewed_author and entry.reviewed_title %}
+        Review of {{ entry.reviewed_author }}, <em>{{ entry.reviewed_title }}</em>,
+      {% else %}
+        “{{ entry.title }},”
+      {% endif %}
+      <em>{{ entry.journal }}</em>{% if entry.volume %} {{ entry.volume }}{% endif %}{% if entry.year %} ({{ entry.year }}){% endif %}{% if entry.pages %}: {{ entry.pages }}{% endif %}.{% if entry.doi %} <a href="https://doi.org/{{ entry.doi }}">https://doi.org/{{ entry.doi }}</a>{% endif %}
+    
+    {% elsif entry.type == 'incollection' or entry.type == 'inproceedings' %}
+      “{{ entry.title }},” in <em>{{ entry.booktitle }}</em>{% if entry.editor %}, ed. {{ entry.editor }}{% endif %}{% if entry.publisher or entry.address or entry.year %} ({% if entry.address %}{{ entry.address }}{% endif %}{% if entry.publisher %}{% if entry.address %}: {% endif %}{{ entry.publisher }}{% endif %}{% if entry.year %}{% if entry.address or entry.publisher %}, {% endif %}{{ entry.year }}{% endif %}){% endif %}{% if entry.pages %}, {{ entry.pages }}.{% endif %}
+
+    {% elsif entry.type == 'thesis' or entry.type == 'phdthesis' or entry.type == 'mastersthesis' %}
+      “{{ entry.title }},” {% if entry.type == 'phdthesis' or entry.type == 'thesis' %}(PhD diss.,{% elsif entry.type == 'mastersthesis' %}(Master’s thesis,{% endif %} {{ entry.school }}{% if entry.year %}, {{ entry.year }}{% endif %}).
     {% endif %}
-    {% if entry.month %}
-      {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
-    {% endif %}
-    {% if entry.year %}
-      {% capture entryyear %}{{ " " }}{{entry.year}}{% endcapture %}
-    {% endif %}
-    {% assign entrytype_text = entrytype | strip_html | strip %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
-      {{ periodical | strip }}
-    </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+  </div>
+
 
     <!-- Links/Buttons -->
     <div class="links">

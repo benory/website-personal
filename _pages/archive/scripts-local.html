@@ -43,7 +43,7 @@ function buildSeriesSelect(data) {
 	let slist = Object.keys(counter).sort();
 	let seriesCount = slist.length;
 	let output = "<select class='series custom-select' onchange='doSearch()'>\n";
-	output += `<option value="">Any archival series [${seriesCount}]</option>`;
+	output += `<option value="">Subject [${seriesCount}]</option>`;
 	for (let i=0; i<slist.length; i++) {
 		let name = slist[i];
 		let count = counter[slist[i]];
