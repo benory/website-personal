@@ -22,6 +22,5 @@ nav: false
     <span id="search-count"></span>
     <div id="search-interface"></div>
   </div>
-
   <div id="list"></div>
 </div>
