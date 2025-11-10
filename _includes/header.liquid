@@ -1,3 +1,118 @@
+<style>
+
+/* Base link styles */
+.navbar .nav-link {
+  font-size: 17px;
+  padding: 4px 6px;
+  color: #1b1b1b; /* Text color only */
+}
+
+/* Hover for normal links (but NOT Resources) */
+.navbar .nav-link:hover:not(#navbarDropdownResources),
+.navbar .dropdown-item:hover {
+  text-decoration: none;
+}
+
+/* Keep "Resources" normal weight in ALL states */
+#navbarDropdownResources.nav-link,
+#navbarDropdownResources.nav-link:hover,
+#navbarDropdownResources.nav-link:focus,
+#navbarDropdownResources.nav-link:active,
+#navbarDropdownResources[aria-expanded="true"],
+.nav-item.dropdown.show > #navbarDropdownResources.nav-link {
+  letter-spacing: normal;   /* prevent any “spreading” */
+  text-decoration: none;
+}
+
+/* Remove Bootstrap dropdown caret arrow */
+.navbar .dropdown-toggle::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ===== Dropdown panel styling ===== */
+.navbar .dropdown-menu {
+  border: 0;
+  border-radius: 8px;
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 6px 0;
+}
+
+/* Dropdown links */
+.navbar .dropdown-item {
+  color: #1b1b1b;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+/* Override Bootstrap's blue active state for Carapetyan Letters etc. */
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background-color: transparent;
+  color: #1b1b1b;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Divider tone */
+.navbar .dropdown-divider {
+  border-top-color: rgba(106,97,86,0.25);
+}
+
+/* Focus ring for keyboard users */
+.navbar .nav-link:focus,
+.navbar .dropdown-item:focus {
+  outline: 2px solid rgba(106,97,86,0.45);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Keep "Resources" identical in ALL states (color, weight, spacing) */
+.navbar #navbarDropdownResources.nav-link,
+.navbar #navbarDropdownResources.nav-link:hover,
+.navbar #navbarDropdownResources.nav-link:focus,
+.navbar #navbarDropdownResources.nav-link:active,
+.navbar #navbarDropdownResources[aria-expanded="true"],
+.navbar .nav-item.dropdown.show > #navbarDropdownResources.nav-link,
+.navbar .nav-item.dropdown:hover > #navbarDropdownResources.nav-link {
+  color: #1b1b1b !important;   /* no color change */
+  font-weight: 400 !important;  /* no bolding */
+  letter-spacing: normal !important; /* no "spreading" */
+  text-decoration: none !important;
+  -webkit-font-smoothing: antialiased; /* optional: reduce shimmer on hover */
+  text-rendering: optimizeLegibility;  /* optional */
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mqHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (!mqHover.matches) return; // only run on desktop
+
+  document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+    const toggle = item.querySelector('.dropdown-toggle');
+    const menu = item.querySelector('.dropdown-menu');
+    if (!toggle || !menu) return;
+
+    // Show menu on hover
+    item.addEventListener('mouseenter', () => {
+      toggle.classList.add('show');
+      menu.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+    });
+
+    // Hide menu on mouse leave
+    item.addEventListener('mouseleave', () => {
+      toggle.classList.remove('show');
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
+</script>
+
 <header>
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
@@ -56,6 +171,34 @@
             </a>
           </li>
 
+          <!-- Custom Resources dropdown (no parent page) -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownResources"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              resources
+            </a>
+            <div class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdownResources">
+            <!-- New link for Archival Documents -->
+            <a class="dropdown-item {% if page.url == '/archive/' %}active{% endif %}" href="{{ '/archive/' | relative_url }}">
+              archival documents
+            </a>
+
+            <!-- Existing link for Carapetyan Letters -->
+            <a class="dropdown-item {% if page.url == '/Carapetyan/' %}active{% endif %}" href="{{ '/Carapetyan/' | relative_url }}">
+              Carapetyan letters
+            </a>
+          </div>
+          </li>
+
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
@@ -82,7 +225,7 @@
                       <span class="sr-only">(current)</span>
                     {% endif %}
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
                     {% for child in p.children %}
                       {% if child.title == 'divider' %}
                         <div class="dropdown-divider"></div>
