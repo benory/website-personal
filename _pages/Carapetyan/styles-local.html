@@ -80,6 +80,7 @@ table.browse td:nth-child(6) {
   font-size: 16px; 
   padding: 12px 20px 12px 40px; 
   width: 20%; 
+  box-sizing: border-box;
 }
 
 /* Desktop layout */
@@ -215,7 +216,12 @@ table.browse td:nth-child(6) {
   #input {
     width: 100%;
     max-width: none;
+    font-size: 14px;
+    padding: 8px 32px 8px 32px;  /* less vertical padding */
+    line-height: 1.2;
+    height: 40px;                /* cap the visible height */
     background-position: 10px center;
+    box-sizing: border-box;
   }
 
   #search-count {
@@ -265,6 +271,13 @@ table.browse td:nth-child(6) {
   table.browse {
     min-width: 600px;
   }
+
+  #input {
+    font-size: 13px;
+    height: 36px;
+    padding: 6px 28px 6px 28px;
+  }
 }
+
 
 </style>
