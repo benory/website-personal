@@ -12,6 +12,6 @@ See **[my research page](/research/)** and **[my CV](/assets/pdf/Ory_CV.pdf){:ta
 <!-- _pages/publications.md -->
 <div class="publications">
 
-{% bibliography --style _csl/chicago-fullnote-bibliography.csl %}
+{% bibliography %}
 
 </div>
