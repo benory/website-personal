@@ -1,7 +1,7 @@
 <style>
 
 table {
-	font: 400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font: 400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 h1 { font-size: 32px; }
@@ -65,16 +65,24 @@ table.browse td:nth-child(6) {
   min-width: 200px;
 }
 
-#input {
-	background-image: url('/assets/img/searchicon.png'); /* Add a search icon to input */
-	background-position: 10px 12px; /* Position the search icon */
-	background-repeat: no-repeat; /* Do not repeat the icon image */
-	border: 1px solid #ddd; /* Add a grey border */
-	font-size: 16px; 
-	padding: 12px 20px 12px 40px; 
-	width: 20%; 
+/* NEW: scroll container for the table */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
 }
 
+/* Search input */
+#input {
+  background-image: url('/assets/img/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 16px; 
+  padding: 12px 20px 12px 40px; 
+  width: 20%; 
+}
+
+/* Desktop layout */
 .page-wrapper {
   width: 1000px;
   margin: 0 auto;
@@ -89,8 +97,8 @@ table.browse td:nth-child(6) {
 }
 
 #search-count{
-	padding-left: 20px;
-	padding-right: 50px;
+  padding-left: 20px;
+  padding-right: 50px;
 }
 
 #search-interface {
@@ -101,8 +109,8 @@ table.browse td:nth-child(6) {
 }
 
 .page-header {
-	width: 1000px;
-	transform: translateX(-100px); 
+  width: 1000px;
+  transform: translateX(-100px); 
   text-align: center;
   padding: 0px 0 20px 0; /* bottom padding */
 }
@@ -113,11 +121,11 @@ table.browse td:nth-child(6) {
 }
 
 .description {
-	width: 900px;
-	transform: translateX(-50px);
-	text-align: left;
-	font-size: 16px;
-	padding-bottom: 40px;
+  width: 900px;
+  transform: translateX(-50px);
+  text-align: left;
+  font-size: 16px;
+  padding-bottom: 40px;
 }
 
 .filter-bar {
@@ -135,7 +143,7 @@ table.browse td:nth-child(6) {
 }
 
 #search-interface {
-	align: right;
+  align: right;
 }
 
 #search-interface select {
@@ -158,6 +166,105 @@ table.browse td:nth-child(6) {
   background-size: 12px;
   padding-right: 30px; /* space for dropdown arrow */
   box-sizing: border-box;
+}
+
+/* -------------------------------------------------
+   MOBILE / TABLET OVERRIDES
+   ------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-header,
+  .page-wrapper,
+  .description {
+    width: 100%;
+    max-width: 100%;
+    transform: none;           /* remove negative translateX */
+    margin: 0 auto;
+    padding: 0 1rem;           /* side padding for breathing room */
+    box-sizing: border-box;
+  }
+
+  .page-header {
+    text-align: left;
+    padding-top: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+
+  #input {
+    width: 100%;
+    max-width: none;
+    background-position: 10px center;
+  }
+
+  #search-count {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #search-interface {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #search-interface select {
+    flex: 1 1 calc(50% - 8px);
+    max-width: none;
+    min-width: 140px;
+  }
+
+  .table-container {
+    padding-bottom: 1rem;
+  }
+
+  table.browse {
+    font-size: 12px;
+    min-width: 650px;   /* keeps structure; user scrolls horizontally */
+  }
+
+  table.browse th,
+  table.browse td {
+    padding: 4px;
+  }
+}
+
+/* Even smaller devices (optional) */
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  table.browse {
+    min-width: 600px;
+  }
 }
 
 </style>

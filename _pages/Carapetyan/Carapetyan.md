@@ -22,5 +22,7 @@ nav: false
     <span id="search-count"></span>
     <div id="search-interface"></div>
   </div>
-  <div id="list"></div>
+  <div class="table-container">
+    <div id="list"></div>
+  </div>
 </div>
