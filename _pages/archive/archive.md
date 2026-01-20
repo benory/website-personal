@@ -12,7 +12,8 @@ nav: false
 
 <div class="page-wrapper">
 
-My collection of archival materials on the history of musicology includes pages from a publicity scrapbook for Gustave Reese’s <i>Music in the Middle Ages</i> (1940), Walter Gerstenberg’s unpublished Habilitationsschrift "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the papers of Peter Gradenwitz (1910–2001), a German-Israeli musicologist. High-resolution, publication-ready scans are available on request.<br><br>
+<p>My collection includes archival materials on the history of musicology, such as publicity scrapbook for Gustave Reese’s <i>Music in the Middle Ages</i> (1940), Walter Gerstenberg’s unpublished Habilitationsschrift "Beiträge zur Problemgeschichte der evangelischen Kirchenmusik" (1935), and the papers of Peter Gradenwitz (1910–2001), a German-Israeli musicologist. High-resolution, publication-ready scans are available on request.</p>
+<p>I also own a piano-vocal score of an early nineteenth-century Venetian opera by Stefano Pavesi, for which few excerpts survive.</p>
 
 <div id="search-interface"></div>
 <div id="list"></div>

@@ -1,5 +1,6 @@
 [
 	{
+		"Box": "1",
 		"Series": "1",
 		"Folder": "1",
 		"Series Description": "1971 International Josquin Festival-Conference",
@@ -11,6 +12,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "1",
 		"Folder": "2",
 		"Series Description": "1971 International Josquin Festival-Conference",
@@ -22,6 +24,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "1",
 		"Folder": "3",
 		"Series Description": "1971 International Josquin Festival-Conference",
@@ -33,6 +36,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "1",
 		"Folder": "4",
 		"Series Description": "1971 International Josquin Festival-Conference",
@@ -44,6 +48,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "1",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -55,6 +60,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "2",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -66,6 +72,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "3",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -77,6 +84,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "4",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -88,6 +96,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "5",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -99,6 +108,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "2",
 		"Folder": "6",
 		"Series Description": "Beethoven-Haus Bonn",
@@ -110,6 +120,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "1",
 		"Series Description": "Correspondence",
@@ -121,6 +132,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "2",
 		"Series Description": "Correspondence",
@@ -134,6 +146,7 @@
 		"Copyright Details": "Dent died 22 August 1957"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "3",
 		"Series Description": "Correspondence",
@@ -150,6 +163,7 @@
 		"URL": "https://drive.google.com/file/d/1PK7WOg2F0XhS6m6T-0kkNOglBgcJH3gN/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "4",
 		"Series Description": "Correspondence",
@@ -161,6 +175,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "5",
 		"Series Description": "Correspondence",
@@ -172,6 +187,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "6",
 		"Series Description": "Correspondence",
@@ -185,6 +201,7 @@
 		"Copyright Details": "Gerstenberg died 26 October 1988"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "7",
 		"Series Description": "Correspondence",
@@ -198,6 +215,7 @@
 		"Copyright Details": "Horn died in 7 May 2019"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "8",
 		"Series Description": "Correspondence",
@@ -211,8 +229,23 @@
 		"Copyright Details": "Benthem died 9 January 2023"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
 		"Folder": "9",
+		"Series Description": "Correspondence",
+		"Folder Description": "Letters from Moser, Hans Joachim to Wilhelm, Martin, 1928",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, tucholsklavier",
+		"Copyright": "yes",
+		"End Date": "2037-8-14",
+		"Copyright Details": "Moser died 14 August 1967"
+	},
+	{
+		"Box": "1",
+		"Series": "3",
+		"Folder": "10",
 		"Series Description": "Correspondence",
 		"Folder Description": "Letter from Sachs, Curt to Wiggins, 27 November 1956",
 		"Scanned": "yes",
@@ -224,8 +257,9 @@
 		"Copyright Details": "Sachs died 5 February 1959"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
-		"Folder": "10",
+		"Folder": "11",
 		"Series Description": "Correspondence",
 		"Folder Description": "Letter from Seeger, Theodor O. to Kroll, Erwin, 20 October 1935",
 		"Scanned": "yes",
@@ -240,8 +274,9 @@
 		"URL": "https://drive.google.com/file/d/1XioSFu-jXemMyM63hWfWiDkjMuDVaPV9/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
-		"Folder": "11",
+		"Folder": "12",
 		"Series Description": "Correspondence",
 		"Folder Description": "Letter from Universal-Edition Actiengesellschaft Wien to Einstein, Alfred, 3 March 1921",
 		"Scanned": "yes",
@@ -255,8 +290,9 @@
 		"URL": "https://drive.google.com/file/d/1BTxLaTyb9-7aHtu-D3aYR7e7KWpUPovj/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "3",
-		"Folder": "12",
+		"Folder": "13",
 		"Series Description": "Correspondence",
 		"Folder Description": "Letter from Weakland, Rembert to Ory, Benjamin, 12 November 2021",
 		"Scanned": "yes",
@@ -268,6 +304,7 @@
 		"Copyright Details": "Weakland died 22 August 2022"
 	},
 	{
+		"Box": "1",
 		"Series": "4",
 		"Folder": "1",
 		"Series Description": "American Institute of Musicology",
@@ -278,6 +315,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "4",
 		"Folder": "2",
 		"Series Description": "American Institute of Musicology",
@@ -288,6 +326,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "4",
 		"Folder": "3",
 		"Series Description": "American Institute of Musicology",
@@ -300,6 +339,7 @@
 		"Copyright Details": "Bent is alive"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "1",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -311,6 +351,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "2",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -324,6 +365,7 @@
 		"Copyright Details": "Augst died 26 March 2005"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "3",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -335,6 +377,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "4",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -348,6 +391,7 @@
 		"Copyright Details": "Fischer-Dieskau died 18 May 2012"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "5",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -359,6 +403,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "6",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -370,6 +415,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "7",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -381,6 +427,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "8",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -392,6 +439,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "9",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -405,6 +453,7 @@
 		"Copyright Details": "Mahling died 13 February 2012"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "10",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -416,6 +465,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "11",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -426,6 +476,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "12",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -437,6 +488,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "13",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -448,6 +500,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "14",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -461,6 +514,7 @@
 		"Copyright Details": "Paporisz died in 1992"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "15",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -472,6 +526,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "16",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -483,6 +538,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "17",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -494,6 +550,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "18",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -505,6 +562,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "19",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -516,6 +574,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "20",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -528,6 +587,7 @@
 		"URL": "https://drive.google.com/file/d/17XVoxjl2Ni28PYKtnabow7Dw3n7VHI0w/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "21",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -539,6 +599,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "5",
 		"Folder": "22",
 		"Series Description": "Nachlass Peter and Ursula Gradenwitz",
@@ -550,6 +611,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "1",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -566,6 +628,7 @@
 		"URL": "https://drive.google.com/file/d/1jGzF0HlQXeLRDwEutbVyoHTkV4RN_ns9/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "2",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -579,6 +642,7 @@
 		"Copyright Details": "Blom died 11 April 1959"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "3",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -592,6 +656,7 @@
 		"Copyright Details": "Bukofzer died 7 December 1955"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "4",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -605,6 +670,7 @@
 		"Copyright Details": "Dickinson died 6 November 1964"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "5",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -621,6 +687,7 @@
 		"URL": "https://drive.google.com/file/d/1peWKwbvw4rCJNQRWbbhc9qj2PU2TxtZ5/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "6",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -637,6 +704,7 @@
 		"URL": "https://drive.google.com/file/d/1nv4E358Hfi2RRKGT4esxMBSr0eHge-cz/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "7",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -653,6 +721,7 @@
 		"URL": "https://drive.google.com/file/d/1YL8YMBZhWRmsMbsrRJuN_KUsoG6g5rJY/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "8",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -669,6 +738,7 @@
 		"URL": "https://drive.google.com/file/d/16cuzBflhyA4Nlbr5NLCXAgsWR6q0BHZR/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "9",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -681,6 +751,7 @@
 		"URL": "https://drive.google.com/file/d/1RGTXzrXmszJWzr8QszBiDAEO57xn0iNC/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "10",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -694,6 +765,7 @@
 		"Copyright Details": "Gleason died 28 June 1980"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "11",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -707,6 +779,7 @@
 		"Copyright Details": "Greiff died 31 August 1995"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "12",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -720,6 +793,7 @@
 		"Copyright Details": "Gerhard died 4 September 2000"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "13",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -733,6 +807,7 @@
 		"Copyright Details": "Kinkeldey died 19 September 1966"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "14",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -749,6 +824,7 @@
 		"URL": "https://drive.google.com/file/d/1QnmkBr0fZ92spg2n4GTx-_kfn6ob5GEj/view?usp=share_link"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "15",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -760,6 +836,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "16",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -771,6 +848,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "17",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -784,6 +862,7 @@
 		"Copyright Details": "Walter died 6 October 1973"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "18",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -795,6 +874,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "19",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -806,6 +886,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "1",
 		"Series": "6",
 		"Folder": "20",
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
@@ -817,10 +898,11 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "2",
 		"Series": "7",
 		"Folder": "1",
 		"Series Description": "Walter Gerstenberg Archival Materials",
-		"Folder Description": "Walter Gerstenberg Habilitation, 1935",
+		"Folder Description": "Original copy of Gerstenberg, Walter, Beiträge zur Problemgeschichte der evangelischen Kirchenmusik, 1935",
 		"Scanned": "yes",
 		"Image Available": "no",
 		"Hidden": "no",
@@ -832,6 +914,7 @@
 		"Permissions Granter": "Susanne Gerstenberg"
 	},
 	{
+		"Box": "2",
 		"Series": "8",
 		"Folder": "1",
 		"Series Description": "Offprints",
@@ -843,6 +926,7 @@
 		"Copyright": "yes"
 	},
 	{
+		"Box": "2",
 		"Series": "8",
 		"Folder": "2",
 		"Series Description": "Offprints",
@@ -852,5 +936,18 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, buchfundus-berlin",
 		"Copyright": "yes"
+	},
+	{
+		"Box": "2",
+		"Series": "9",
+		"Folder": "1",
+		"Series Description": "Music manuscript",
+		"Folder Description": "Pavesi, Stefano, Alla tua quest Alma unita Gran Scena Nell'Opera il Teodoro, piano-vocal score, ca. 1812–20",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "J & J Lubrano Music Antiquarians LLC",
+		"Copyright": "no",
+		"URL": "https://drive.google.com/file/d/1X259cXCTlH3ZPcWBnD50UxAMsxfhOUKk/view?usp=share_link"
 	}
 ]
