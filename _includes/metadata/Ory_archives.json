@@ -284,7 +284,7 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
 		"Copyright": "no",
-		"Copyright Details": "anonymous work; author presumed to be deceased for 70 years",
+		"Copyright Details": "anonymous; author presumed to be deceased for 70 years",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
 		"URL": "https://drive.google.com/file/d/1BTxLaTyb9-7aHtu-D3aYR7e7KWpUPovj/view?usp=share_link"
@@ -302,6 +302,48 @@
 		"Copyright": "yes",
 		"End Date": "2092-8-22",
 		"Copyright Details": "Weakland died 22 August 2022"
+	},
+	{
+		"Box": "1",
+		"Series": "3",
+		"Folder": "14",
+		"Series Description": "Correspondence",
+		"Folder Description": "Letters from Van den Borren, Charles, 1908",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, billmcintosh",
+		"Copyright": "yes",
+		"End Date": "2033-1-14",
+		"Copyright Details": "van den Borren died 14 January 1966"
+	},
+	{
+		"Box": "1",
+		"Series": "3",
+		"Folder": "15",
+		"Series Description": "Correspondence",
+		"Folder Description": "Letter from Jöde, Fritz to Kroll-Radok, Lisbeth, 17 January 1933",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, tucholsklavier",
+		"Copyright": "yes",
+		"End Date": "2040-10-19",
+		"Copyright Details": "Jöde died 19 October 1970"
+	},
+	{
+		"Box": "1",
+		"Series": "3",
+		"Folder": "16",
+		"Series Description": "Correspondence",
+		"Folder Description": "Letter from Chailley, Jacques, 10 August 1971",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, in-texto",
+		"Copyright": "yes",
+		"End Date": "2069-1-21",
+		"Copyright Details": "Chailley died 21 January 1999"
 	},
 	{
 		"Box": "1",
@@ -949,5 +991,29 @@
 		"Acquisition Information": "J & J Lubrano Music Antiquarians LLC",
 		"Copyright": "no",
 		"URL": "https://drive.google.com/file/d/1X259cXCTlH3ZPcWBnD50UxAMsxfhOUKk/view?usp=share_link"
+	},
+	{
+		"Box": "2",
+		"Series": "10",
+		"Folder": "1",
+		"Series Description": "Concert Programs",
+		"Folder Description": "Program \"Das Glogauer Liederbuch,\" 30 March 1958",
+		"Scanned": "yes",
+		"Image Available": "yes",
+		"Hidden": "no",
+		"Acquisition Information": "Library of Walther Lipphardt, Universtätsarchiv Augsburg",
+		"Copyright": "no"
+	},
+	{
+		"Box": "2",
+		"Series": "11",
+		"Folder": "1",
+		"Series Description": "Claire and Barry Brook Correspondence",
+		"Folder Description": "Four Cards and Seven Envelopes Addressed to Claire and Barry Brook",
+		"Scanned": "yes",
+		"Image Available": "no",
+		"Hidden": "no",
+		"Acquisition Information": "eBay, jamesdouglasgallery",
+		"Copyright": "yes"
 	}
 ]
