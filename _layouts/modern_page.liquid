@@ -13,6 +13,16 @@
     {% include modern-footer.liquid %}
 
     <script>
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const target = document.querySelector(link.getAttribute("href"));
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ block: "start" });
+          history.pushState(null, "", link.getAttribute("href"));
+        });
+      });
+
       document.querySelectorAll(".abstract-toggle").forEach((button) => {
         button.addEventListener("click", () => {
           const panel = document.getElementById(button.getAttribute("aria-controls"));
