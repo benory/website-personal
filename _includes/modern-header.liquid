@@ -1,0 +1,14 @@
+{% assign modern_home_url = '/' | relative_url %}
+
+<header class="modern-site-header">
+  <div class="modern-wrap modern-nav">
+    <a class="modern-brand" href="{{ modern_home_url }}">Benjamin Ory</a>
+    <nav class="modern-links" aria-label="Main navigation">
+      <a href="{{ modern_home_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>home</a>
+      <a href="{{ modern_home_url }}#research">research</a>
+      <a href="{{ modern_home_url }}#publications">publications</a>
+      <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>archive</a>
+      <a href="{{ '/assets/pdf/Ory_CV.pdf' | relative_url }}">cv</a>
+    </nav>
+  </div>
+</header>

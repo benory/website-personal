@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include modern-head.liquid %}
+    {% include modern-home-styles.html %}
+  </head>
+
+  <body class="modern-home-body">
+    {% include modern-header.liquid %}
+
+    {{ content }}
+
+    {% include modern-footer.liquid %}
+
+    <script>
+      document.querySelectorAll(".abstract-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const panel = document.getElementById(button.getAttribute("aria-controls"));
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", String(!isOpen));
+          panel.hidden = isOpen;
+        });
+      });
+    </script>
+  </body>
+</html>

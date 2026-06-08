@@ -1,0 +1,638 @@
+<style>
+  body.modern-home-body {
+    --modern-paper: #f7f9fa;
+    --modern-surface: #ffffff;
+    --modern-ink: #101317;
+    --modern-soft-ink: #2d343b;
+    --modern-muted: #68727d;
+    --modern-line: #dce3e8;
+    --modern-line-strong: #bcc8d1;
+    --modern-accent: #0d5168;
+    --modern-accent-dark: #083748;
+    --modern-green: #286d5c;
+    --modern-blue: #263f63;
+    --modern-slate: #4f6672;
+    --modern-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --modern-serif: Georgia, "Times New Roman", Times, serif;
+
+    margin: 0;
+    background: var(--modern-paper);
+    color: var(--modern-ink);
+    font-family: var(--modern-sans);
+    line-height: 1.58;
+  }
+
+  body.modern-home-body * {
+    box-sizing: border-box;
+  }
+
+  body.modern-home-body a {
+    color: var(--modern-accent);
+    text-decoration-color: rgba(13, 81, 104, 0.32);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  body.modern-home-body a:hover {
+    color: var(--modern-accent-dark);
+    text-decoration-color: currentColor;
+  }
+
+  body.modern-home-body img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .modern-wrap {
+    width: min(1080px, calc(100% - 44px));
+    margin: 0 auto;
+  }
+
+  .modern-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(220, 227, 232, 0.9);
+    background: rgba(247, 249, 250, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .modern-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 68px;
+  }
+
+  .modern-brand {
+    color: var(--modern-ink);
+    font-family: var(--modern-serif);
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .modern-brand:hover {
+    color: var(--modern-ink);
+    text-decoration: none;
+  }
+
+  .modern-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    font-size: 14px;
+  }
+
+  .modern-links a {
+    color: var(--modern-soft-ink);
+    text-decoration: none;
+  }
+
+  .modern-links a:hover,
+  .modern-links a[aria-current="page"] {
+    color: var(--modern-accent);
+  }
+
+  .modern-home h1,
+  .modern-home h2,
+  .modern-home h3 {
+    font-family: var(--modern-serif);
+    font-weight: 500;
+  }
+
+  .modern-home .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 72px;
+    align-items: center;
+    min-height: calc(100vh - 68px);
+    padding: 74px 0 82px;
+  }
+
+  .modern-home .hero h1 {
+    max-width: 650px;
+    margin: 0;
+    color: var(--modern-ink);
+    font-size: 68px;
+    line-height: 1;
+  }
+
+  .modern-home .bio {
+    max-width: 640px;
+    margin: 26px 0 0;
+    color: var(--modern-soft-ink);
+    font-size: 17px;
+  }
+
+  .modern-home .bio p {
+    margin: 0 0 16px;
+  }
+
+  .modern-home .bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .modern-home .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 12px;
+    row-gap: 4px;
+    margin-top: 32px;
+  }
+
+  .modern-home .slash {
+    color: var(--modern-line-strong);
+    font-weight: 400;
+  }
+
+  .modern-home .quiet-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--modern-ink);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .modern-home .quiet-link:hover {
+    color: var(--modern-accent);
+  }
+
+  .modern-home .portrait {
+    align-self: center;
+  }
+
+  .modern-home .portrait-frame {
+    border: 1px solid var(--modern-line-strong);
+    border-radius: 8px;
+    background: var(--modern-surface);
+    padding: 10px;
+  }
+
+  .modern-home .portrait img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .modern-home .section {
+    padding: 72px 0;
+  }
+
+  .modern-home .section + .section {
+    border-top: 1px solid var(--modern-line);
+  }
+
+  .modern-home .section-head {
+    margin-bottom: 36px;
+  }
+
+  .modern-home .section-head h2 {
+    margin: 0;
+    color: var(--modern-ink);
+    font-size: 44px;
+    line-height: 1.08;
+  }
+
+  .modern-home .research-list,
+  .modern-home .publication-list,
+  .modern-home .news-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--modern-line);
+  }
+
+  .modern-home .research-item {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 34px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--modern-line);
+  }
+
+  .modern-home .research-list .research-item:last-child {
+    border-bottom: 0;
+  }
+
+  .modern-home .research-thumb {
+    overflow: hidden;
+    align-self: start;
+    border: 1px solid var(--modern-line);
+    border-radius: 8px;
+    background: var(--modern-surface);
+  }
+
+  .modern-home .research-thumb img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .modern-home .research-thumb.program-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    padding: 10px;
+    background: #050505;
+  }
+
+  .modern-home .research-thumb.program-thumb img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .modern-home .research-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 138px;
+    gap: 28px;
+  }
+
+  .modern-home .research-copy-wide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .modern-home .tag {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--modern-blue);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .modern-home .research-item:nth-child(2) .tag {
+    color: var(--modern-green);
+  }
+
+  .modern-home .research-item:nth-child(3) .tag {
+    color: var(--modern-accent);
+  }
+
+  .modern-home .research-item:nth-child(4) .tag {
+    color: var(--modern-slate);
+  }
+
+  .modern-home .research-copy h3 {
+    margin: 0;
+    color: var(--modern-ink);
+    font-size: 29px;
+    line-height: 1.15;
+  }
+
+  .modern-home .research-copy p {
+    max-width: 650px;
+    margin: 12px 0 0;
+    color: var(--modern-soft-ink);
+    font-size: 16px;
+  }
+
+  .modern-home .research-subentries {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .modern-home .research-subentry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 138px;
+    gap: 28px;
+    align-items: start;
+    border-top: 1px solid var(--modern-line);
+    padding-top: 14px;
+  }
+
+  .modern-home .research-subentry h4 {
+    margin: 0;
+    color: var(--modern-ink);
+    font-family: var(--modern-sans);
+    font-size: 16px;
+    font-weight: 650;
+  }
+
+  .modern-home .research-subentry p {
+    margin-top: 6px;
+  }
+
+  .modern-home .subentry-links,
+  .modern-home .item-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 32px;
+  }
+
+  .modern-home .subentry-links a,
+  .modern-home .item-links a {
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .modern-home .publication-entry {
+    display: grid;
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--modern-line);
+  }
+
+  .modern-home .publication-entry img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--modern-line);
+    border-radius: 8px;
+    background: var(--modern-surface);
+    object-fit: cover;
+  }
+
+  .modern-home .pub-year {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: var(--modern-green);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .modern-home .publication-entry:nth-child(2n) .pub-year {
+    color: var(--modern-blue);
+  }
+
+  .modern-home .publication-entry:nth-child(3n) .pub-year {
+    color: var(--modern-accent);
+  }
+
+  .modern-home .publication-entry p {
+    margin: 0;
+  }
+
+  .modern-home .publication-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 246px;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .modern-home .pub-citation {
+    color: var(--modern-soft-ink);
+    font-size: 15px;
+  }
+
+  .modern-home .pub-title {
+    color: var(--modern-ink);
+    font-weight: 400;
+  }
+
+  .modern-home .pub-links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 22px;
+  }
+
+  .modern-home .pub-links a,
+  .modern-home .pub-links button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    border: 1px solid var(--modern-line-strong);
+    border-radius: 999px;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.58);
+    color: var(--modern-soft-ink);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .modern-home .pub-links button {
+    cursor: pointer;
+  }
+
+  .modern-home .pub-links a:hover,
+  .modern-home .pub-links button:hover {
+    border-color: var(--modern-accent);
+    color: var(--modern-accent);
+  }
+
+  .modern-home .abstract-panel {
+    grid-column: 1 / 2;
+    max-width: 780px;
+    margin-top: -2px;
+  }
+
+  .modern-home .abstract-panel p {
+    margin: 0;
+    border-left: 2px solid var(--modern-line-strong);
+    padding: 0 0 0 16px;
+    color: var(--modern-muted);
+    font-size: 15px;
+  }
+
+  .modern-home .abstract-panel[hidden] {
+    display: none;
+  }
+
+  .modern-home .archive-note {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 48px;
+    align-items: center;
+    border-top: 1px solid var(--modern-line);
+    border-bottom: 1px solid var(--modern-line);
+    padding: 34px 0;
+  }
+
+  .modern-home .archive-note img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--modern-line);
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .modern-home .archive-note h2 {
+    margin: 0;
+    color: var(--modern-ink);
+    font-family: var(--modern-serif);
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 1.14;
+  }
+
+  .modern-home .archive-note p {
+    margin: 14px 0 0;
+    color: var(--modern-soft-ink);
+    font-size: 16px;
+  }
+
+  .modern-home .news-item {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 26px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--modern-line);
+  }
+
+  .modern-home .news-item time {
+    color: var(--modern-muted);
+    font-size: 14px;
+  }
+
+  .modern-home .news-item p {
+    margin: 0;
+    color: var(--modern-soft-ink);
+  }
+
+  .modern-home .news-copy p + p {
+    margin-top: 12px;
+  }
+
+  .modern-home .news-copy br {
+    display: none;
+  }
+
+  .modern-footer {
+    padding: 42px 0 52px;
+    color: var(--modern-muted);
+    font-size: 14px;
+  }
+
+  .modern-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    border-top: 1px solid var(--modern-line);
+    padding-top: 22px;
+  }
+
+  .modern-footer a {
+    color: var(--modern-muted);
+    text-decoration: none;
+  }
+
+  .modern-footer a:hover {
+    color: var(--modern-accent);
+  }
+
+  @media (max-width: 900px) {
+    .modern-home .hero {
+      grid-template-columns: 1fr;
+      gap: 34px;
+      min-height: auto;
+      padding-top: 56px;
+    }
+
+    .modern-home .portrait {
+      max-width: 330px;
+    }
+
+    .modern-home .archive-note {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .modern-home .publication-content {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .modern-home .abstract-panel {
+      grid-column: 1 / -1;
+    }
+
+    .modern-home .pub-links {
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+
+    .modern-home .research-copy,
+    .modern-home .research-subentry {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .modern-home .item-links,
+    .modern-home .subentry-links {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .modern-wrap {
+      width: min(100% - 30px, 1080px);
+    }
+
+    .modern-nav {
+      display: block;
+      min-height: 0;
+      padding: 14px 0;
+    }
+
+    .modern-links {
+      gap: 14px;
+      margin-top: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    .modern-home .hero {
+      padding: 42px 0 56px;
+    }
+
+    .modern-home .hero h1 {
+      font-size: 48px;
+    }
+
+    .modern-home .section {
+      padding: 62px 0;
+    }
+
+    .modern-home .section-head h2 {
+      font-size: 34px;
+    }
+
+    .modern-home .research-item,
+    .modern-home .publication-entry {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .modern-home .research-thumb,
+    .modern-home .publication-entry img {
+      max-width: 230px;
+    }
+
+    .modern-home .research-copy h3,
+    .modern-home .archive-note h2 {
+      font-size: 26px;
+    }
+
+    .modern-home .news-item {
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
+
+    .modern-footer-inner {
+      display: block;
+    }
+  }
+</style>
