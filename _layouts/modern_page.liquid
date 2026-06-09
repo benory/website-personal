@@ -13,6 +13,12 @@
     {% include modern-footer.liquid %}
 
     <script>
+      document.querySelectorAll(".quick-links a").forEach((link) => {
+        link.addEventListener("mousedown", (event) => {
+          event.preventDefault();
+        });
+      });
+
       document.querySelectorAll(".abstract-toggle").forEach((button) => {
         button.addEventListener("click", () => {
           const panel = document.getElementById(button.getAttribute("aria-controls"));
