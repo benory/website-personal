@@ -27,9 +27,9 @@ google_site_verification:
 bing_site_verification:
 
 # Analytics are disabled unless these are set later.
-enable_google_analytics: false
+enable_google_analytics: true
 enable_cronitor_analytics: false
-google_analytics:
+google_analytics: G-9KXTMJ5SQR
 cronitor_analytics:
 
 # News is used as a data collection for the homepage, but no old news pages are generated.
