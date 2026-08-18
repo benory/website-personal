@@ -18,8 +18,10 @@ The site is built with Jekyll and includes research descriptions, publications, 
 _pages/             Site pages
 _includes/          Shared includes, styles, scripts, and metadata
 _data/              Jekyll data files
+_bibliography/      Publication entries in BibTeX format
 assets/img/         Images and publication previews
 assets/pdf/         Downloadable PDFs
 assets/csv/         Downloadable CSV data
 _layouts/           Jekyll layouts
 _config.yml         Main Jekyll configuration
+```

@@ -349,9 +349,22 @@
     border-bottom: 1px solid var(--modern-line);
   }
 
+  /* Jekyll Scholar adds a semantic list around the entries. Neutralize that
+     wrapper so the bibliography retains the homepage's existing layout. */
+  .modern-home .publication-list > .bibliography {
+    display: contents;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .modern-home .publication-list > .bibliography > li {
+    display: contents;
+  }
+
   .modern-home .publication-entry img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     border: 1px solid var(--modern-line);
     border-radius: 8px;
     background: var(--modern-surface);
@@ -367,11 +380,11 @@
     text-transform: uppercase;
   }
 
-  .modern-home .publication-entry:nth-child(2n) .pub-year {
+  .modern-home .bibliography > li:nth-child(2n) .pub-year {
     color: var(--modern-blue);
   }
 
-  .modern-home .publication-entry:nth-child(3n) .pub-year {
+  .modern-home .bibliography > li:nth-child(3n) .pub-year {
     color: var(--modern-accent);
   }
 

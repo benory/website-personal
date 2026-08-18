@@ -1,0 +1,25 @@
+<article class="publication-entry">
+  <img src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}" alt="{{ entry.preview_alt }}">
+  <div class="publication-content">
+    <div>
+      <span class="pub-year">{{ entry.year }}</span>
+      <p class="pub-citation">{{ entry.citation }}</p>
+    </div>
+    <div class="pub-links">
+      {% if entry.abstract %}
+        <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-{{ entry.key }}">Abstract</button>
+      {% endif %}
+      {% if entry.pdf %}
+        <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}">PDF</a>
+      {% endif %}
+      {% if entry.link %}
+        <a href="{{ entry.link }}">link</a>
+      {% endif %}
+    </div>
+    {% if entry.abstract %}
+      <div class="abstract-panel" id="abstract-{{ entry.key }}" hidden>
+        {{ entry.abstract }}
+      </div>
+    {% endif %}
+  </div>
+</article>

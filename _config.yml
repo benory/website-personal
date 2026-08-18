@@ -65,7 +65,18 @@ keep_files:
 
 plugins:
   - jekyll-minifier
+  - jekyll/scholar
   - jekyll-sitemap
+
+# Publications are stored in _bibliography/papers.bib and rendered with
+# the {% bibliography %} Liquid tag in _pages/home.md.
+scholar:
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  sort_by: display_order
+  order: descending
+  query: "@*"
 
 defaults:
   - scope:
