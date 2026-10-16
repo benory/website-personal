@@ -1,10 +1,8 @@
-## Description: Download metadata for Benjamin Ory's website
-##
-## Type "make" in this directory to download the JSON files for the 
-## metadata into the _includes/metadata directory.
-##
+# Refresh personal website metadata directly from Google Sheets.
+.DEFAULT_GOAL := all
+.PHONY: all download Carapetyan_correspondence Ory_archives
 
 all: download
 
-download:
-	(cd _includes/metadata && make download)
+download Carapetyan_correspondence Ory_archives:
+	$(MAKE) -C _includes/metadata $@
