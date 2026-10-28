@@ -41,7 +41,7 @@ permalink: /
       <div class="research-list">
         <article class="research-item">
           <a class="research-thumb" href="https://www.1520s-project.org">
-            <img src="{{ '/assets/img/1520s_Project.png' | relative_url }}" alt="The 1520s Project interface">
+            <img src="{{ '/assets/img/1520s-project-homepage.png' | relative_url }}" alt="The 1520s Project homepage">
           </a>
           <div class="research-copy">
             <div>

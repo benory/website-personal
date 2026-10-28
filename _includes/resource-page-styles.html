@@ -7,7 +7,8 @@
     --resource-muted: #68727d;
     --resource-line: #dce3e8;
     --resource-line-strong: #bcc8d1;
-    --resource-accent: #0d5168;
+    --resource-accent: #3b6f94;
+    --resource-accent-dark: #285472;
     --resource-green: #286d5c;
   }
 
@@ -48,13 +49,13 @@
 
   .resource-page a {
     color: var(--resource-accent);
-    text-decoration-color: rgba(13, 81, 104, 0.32);
+    text-decoration-color: rgba(59, 111, 148, 0.32);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
   }
 
   .resource-page a:hover {
-    color: #083748;
+    color: var(--resource-accent-dark);
     text-decoration-color: currentColor;
   }
 
@@ -136,7 +137,7 @@
   #search-interface select:focus,
   .custom-select:focus {
     border-color: var(--resource-accent);
-    outline: 3px solid rgba(13, 81, 104, 0.12);
+    outline: 3px solid rgba(59, 111, 148, 0.12);
   }
 
   .table-container {
