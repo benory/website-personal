@@ -85,6 +85,7 @@ defaults:
       sitemap: false
 
 jekyll-minifier:
+  compress_css: false
   exclude:
     - robots.txt
   uglifier_args:
