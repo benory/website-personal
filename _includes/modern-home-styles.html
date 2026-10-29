@@ -497,39 +497,6 @@
     display: none;
   }
 
-  .modern-home .archive-note {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: calc(3rem + var(--modern-growth) * 4);
-    align-items: center;
-    border-top: 1px solid var(--modern-line);
-    border-bottom: 1px solid var(--modern-line);
-    padding: 34px 0;
-  }
-
-  .modern-home .archive-note img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border: 1px solid var(--modern-line);
-    border-radius: 8px;
-    object-fit: cover;
-  }
-
-  .modern-home .archive-note h2 {
-    margin: 0;
-    color: var(--modern-ink);
-    font-family: var(--modern-serif);
-    font-weight: 500;
-    font-size: calc(1.9375rem + var(--modern-growth) * 2);
-    line-height: 1.14;
-  }
-
-  .modern-home .archive-note p {
-    margin: 14px 0 0;
-    color: var(--modern-soft-ink);
-    font-size: var(--modern-body-size);
-  }
-
   .modern-home .news-item {
     display: grid;
     grid-template-columns: calc(6.5rem + var(--modern-growth) * 6) minmax(0, 1fr);
@@ -600,11 +567,6 @@
 
     .modern-home .portrait {
       max-width: 330px;
-    }
-
-    .modern-home .archive-note {
-      grid-template-columns: 1fr;
-      gap: 22px;
     }
 
     .modern-home .publication-content {
@@ -710,8 +672,7 @@
       max-width: 230px;
     }
 
-    .modern-home .research-copy h3,
-    .modern-home .archive-note h2 {
+    .modern-home .research-copy h3 {
       font-size: 26px;
     }
 

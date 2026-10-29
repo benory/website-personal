@@ -19,9 +19,9 @@ permalink: /
         <span class="slash" aria-hidden="true">/</span>
         <a class="quiet-link" href="#news">news</a>
         <span class="slash" aria-hidden="true">/</span>
-        <a class="quiet-link" href="{{ '/assets/pdf/Ory_CV.pdf' | relative_url }}">cv</a>
+        <a class="quiet-link" href="{{ '/archive/' | relative_url }}">archive</a>
         <span class="slash" aria-hidden="true">/</span>
-        <a class="quiet-link" href="#archive">archive</a>
+        <a class="quiet-link" href="{{ '/assets/pdf/Ory_CV.pdf' | relative_url }}">cv</a>
       </nav>
     </div>
 
@@ -145,21 +145,6 @@ permalink: /
 
       <div class="publication-list">
         {% bibliography %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="archive" aria-labelledby="archive-title">
-    <div class="modern-wrap">
-      <div class="archive-note">
-        <img src="{{ '/assets/img/archive.png' | relative_url }}" alt="Archival materials">
-        <div>
-          <h2 id="archive-title">Archival Materials</h2>
-          <p>
-            I collect correspondence, research papers, concert programs, and other materials relating to the history of musicology and twentieth-century musical life.
-          </p>
-          <p><a class="quiet-link" href="{{ '/archive/' | relative_url }}">browse archive</a></p>
-        </div>
       </div>
     </div>
   </section>
