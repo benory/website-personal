@@ -12,6 +12,10 @@
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
 
     const onlineUrl = (entry) => {
+      const available = normalize(entry["Image Available"]).trim() === "yes";
+      const cleared = normalize(entry.Copyright).trim() === "no" || normalize(entry.Permissions).trim() === "yes";
+      if (!available || !cleared) return "";
+
       try {
         const url = new URL(entry.URL);
         return ["https:", "http:"].includes(url.protocol) ? url.href : "";

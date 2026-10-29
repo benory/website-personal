@@ -129,7 +129,9 @@
 		"Image Available": "no",
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
-		"Copyright": "yes"
+		"Copyright": "yes",
+		"Year of Author's death": "2012",
+		"End Date": "2082-12-31"
 	},
 	{
 		"Box": "1",
@@ -142,8 +144,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, andy8391",
 		"Copyright": "yes",
-		"End Date": "2027-8-22",
-		"Copyright Details": "Dent died 22 August 1957"
+		"Year of Author's death": "1957",
+		"End Date": "2027-12-31"
 	},
 	{
 		"Box": "1",
@@ -156,11 +158,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
 		"Copyright": "no",
-		"End Date": "2022-2-13",
-		"Copyright Details": "Einstein died 13 February 1952",
+		"Year of Author's death": "1952",
+		"End Date": "2022-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1PK7WOg2F0XhS6m6T-0kkNOglBgcJH3gN/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_3_folder_3.pdf"
 	},
 	{
 		"Box": "1",
@@ -172,7 +174,9 @@
 		"Image Available": "no",
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
-		"Copyright": "yes"
+		"Copyright": "yes",
+		"Year of Author's death": "1984",
+		"End Date": "2054-12-31"
 	},
 	{
 		"Box": "1",
@@ -184,7 +188,9 @@
 		"Image Available": "no",
 		"Hidden": "yes",
 		"Acquisition Information": "Susanne Gerstenberg",
-		"Copyright": "yes"
+		"Copyright": "yes",
+		"Year of Author's death": "1988",
+		"End Date": "2058-12-31"
 	},
 	{
 		"Box": "1",
@@ -197,8 +203,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
 		"Copyright": "yes",
-		"End Date": "2058-10-26",
-		"Copyright Details": "Gerstenberg died 26 October 1988"
+		"Year of Author's death": "1988",
+		"End Date": "2058-12-31"
 	},
 	{
 		"Box": "1",
@@ -211,8 +217,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "Susanne Gerstenberg",
 		"Copyright": "yes",
-		"End Date": "2089-5-7",
-		"Copyright Details": "Horn died in 7 May 2019"
+		"Year of Author's death": "2019",
+		"End Date": "2089-12-31"
 	},
 	{
 		"Box": "1",
@@ -225,8 +231,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "Jaap van Benthem",
 		"Copyright": "yes",
-		"End Date": "2093-1-9",
-		"Copyright Details": "Benthem died 9 January 2023"
+		"Year of Author's death": "1985",
+		"End Date": "2055-12-31"
 	},
 	{
 		"Box": "1",
@@ -239,8 +245,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
 		"Copyright": "yes",
-		"End Date": "2037-8-14",
-		"Copyright Details": "Moser died 14 August 1967"
+		"Year of Author's death": "1967",
+		"End Date": "2037-12-31"
 	},
 	{
 		"Box": "1",
@@ -253,8 +259,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, Todd Mueller Autographs",
 		"Copyright": "yes",
-		"End Date": "2029-2-5",
-		"Copyright Details": "Sachs died 5 February 1959"
+		"Year of Author's death": "1959",
+		"End Date": "2029-12-31"
 	},
 	{
 		"Box": "1",
@@ -271,7 +277,7 @@
 		"Notes": "See Andreas Domann, \"'Führer aller schaffenden Musiker': Paul Graener als nationalsozialistischer Kulturpolitiker,\" in Die Reichsmusikkammer: Kunst im Bann der Nazi-Diktatur, ed. Albrecht Riethmüller and Michael Custodis (Köln: Böhlau Verlag), 69–85, at 83.",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1XioSFu-jXemMyM63hWfWiDkjMuDVaPV9/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_3_folder_10.pdf"
 	},
 	{
 		"Box": "1",
@@ -287,7 +293,7 @@
 		"Copyright Details": "anonymous; author presumed to be deceased for 70 years",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1BTxLaTyb9-7aHtu-D3aYR7e7KWpUPovj/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_3_folder_11.pdf"
 	},
 	{
 		"Box": "1",
@@ -300,8 +306,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "Rembert Weakland",
 		"Copyright": "yes",
-		"End Date": "2092-8-22",
-		"Copyright Details": "Weakland died 22 August 2022"
+		"Year of Author's death": "2022",
+		"End Date": "2092-12-31"
 	},
 	{
 		"Box": "1",
@@ -314,8 +320,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, billmcintosh",
 		"Copyright": "yes",
-		"End Date": "2033-1-14",
-		"Copyright Details": "van den Borren died 14 January 1966"
+		"Year of Author's death": "1966",
+		"End Date": "2036-12-31"
 	},
 	{
 		"Box": "1",
@@ -328,8 +334,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, tucholsklavier",
 		"Copyright": "yes",
-		"End Date": "2040-10-19",
-		"Copyright Details": "Jöde died 19 October 1970"
+		"Year of Author's death": "1970",
+		"End Date": "2040-12-31"
 	},
 	{
 		"Box": "1",
@@ -342,8 +348,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, in-texto",
 		"Copyright": "yes",
-		"End Date": "2069-1-21",
-		"Copyright Details": "Chailley died 21 January 1999"
+		"Year of Author's death": "1999",
+		"End Date": "2069-12-31"
 	},
 	{
 		"Box": "1",
@@ -403,8 +409,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, woltrussia",
 		"Copyright": "yes",
-		"End Date": "2075-3-26",
-		"Copyright Details": "Augst died 26 March 2005"
+		"Year of Author's death": "2005",
+		"End Date": "2075-12-31"
 	},
 	{
 		"Box": "1",
@@ -429,8 +435,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, woltrussia",
 		"Copyright": "yes",
-		"End Date": "2082-5-18",
-		"Copyright Details": "Fischer-Dieskau died 18 May 2012"
+		"Year of Author's death": "2012",
+		"End Date": "2082-12-31"
 	},
 	{
 		"Box": "1",
@@ -491,8 +497,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, woltrussia",
 		"Copyright": "yes",
-		"End Date": "2082-2-13",
-		"Copyright Details": "Mahling died 13 February 2012"
+		"Year of Author's death": "2012",
+		"End Date": "2082-12-31"
 	},
 	{
 		"Box": "1",
@@ -552,8 +558,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, woltrussia",
 		"Copyright": "yes",
-		"End Date": "2062",
-		"Copyright Details": "Paporisz died in 1992"
+		"Year of Author's death": "1992",
+		"End Date": "2062-12-31"
 	},
 	{
 		"Box": "1",
@@ -626,7 +632,7 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, woltrussia",
 		"Copyright": "no",
-		"URL": "https://drive.google.com/file/d/17XVoxjl2Ni28PYKtnabow7Dw3n7VHI0w/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_5_folder_20.pdf"
 	},
 	{
 		"Box": "1",
@@ -663,11 +669,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2022-2-13",
-		"Copyright Details": "Einstein died 13 February 1952",
+		"Year of Author's death": "1952",
+		"End Date": "2022-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1jGzF0HlQXeLRDwEutbVyoHTkV4RN_ns9/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_1.pdf"
 	},
 	{
 		"Box": "1",
@@ -680,8 +686,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2029-4-11",
-		"Copyright Details": "Blom died 11 April 1959"
+		"Year of Author's death": "1959",
+		"End Date": "2029-12-31"
 	},
 	{
 		"Box": "1",
@@ -690,12 +696,13 @@
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
 		"Folder Description": "Letter from Bukofzer, Manfred, 20 November 1940",
 		"Scanned": "yes",
-		"Image Available": "no",
+		"Image Available": "yes",
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
-		"Copyright": "yes",
-		"End Date": "2025-12-7",
-		"Copyright Details": "Bukofzer died 7 December 1955"
+		"Copyright": "no",
+		"Year of Author's death": "1955",
+		"End Date": "2025-12-31",
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_3.pdf"
 	},
 	{
 		"Box": "1",
@@ -708,8 +715,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2033-11-6",
-		"Copyright Details": "Dickinson died 6 November 1964"
+		"Year of Author's death": "1964",
+		"End Date": "2034-12-31"
 	},
 	{
 		"Box": "1",
@@ -722,11 +729,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2014-1-18",
-		"Copyright Details": "Douglas died 18 January 1944",
+		"Year of Author's death": "1944",
+		"End Date": "2014-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1peWKwbvw4rCJNQRWbbhc9qj2PU2TxtZ5/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_5.pdf"
 	},
 	{
 		"Box": "1",
@@ -739,11 +746,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2022-2-13",
-		"Copyright Details": "Einstein died 13 February 1952",
+		"Year of Author's death": "1952",
+		"End Date": "2022-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1nv4E358Hfi2RRKGT4esxMBSr0eHge-cz/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_6.pdf"
 	},
 	{
 		"Box": "1",
@@ -756,11 +763,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2022-2-13",
-		"Copyright Details": "Einstein died 13 February 1952",
+		"Year of Author's death": "1952",
+		"End Date": "2022-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1YL8YMBZhWRmsMbsrRJuN_KUsoG6g5rJY/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_7.pdf"
 	},
 	{
 		"Box": "1",
@@ -773,11 +780,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2014-5-6",
-		"Copyright Details": "Engel died 6 May 1944",
+		"Year of Author's death": "1944",
+		"End Date": "2014-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/16cuzBflhyA4Nlbr5NLCXAgsWR6q0BHZR/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_8.pdf"
 	},
 	{
 		"Box": "1",
@@ -786,11 +793,15 @@
 		"Series Description": "Scrapbook for Reese, Gustave, Music in the Middle Ages",
 		"Folder Description": "Letter from Gerstlé, Henry S to Reese, Gustave, 4 January 1941",
 		"Scanned": "yes",
-		"Image Available": "no",
+		"Image Available": "yes",
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"URL": "https://drive.google.com/file/d/1RGTXzrXmszJWzr8QszBiDAEO57xn0iNC/view?usp=share_link"
+		"Year of Author's death": "1947",
+		"End Date": "2017-12-31",
+		"Permissions": "yes",
+		"Permissions Granter": "public domain",
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_9.pdf"
 	},
 	{
 		"Box": "1",
@@ -803,8 +814,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2050-6-28",
-		"Copyright Details": "Gleason died 28 June 1980"
+		"Year of Author's death": "1980",
+		"End Date": "2050-12-31"
 	},
 	{
 		"Box": "1",
@@ -817,8 +828,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2065-8-31",
-		"Copyright Details": "Greiff died 31 August 1995"
+		"Year of Author's death": "1995",
+		"End Date": "2065-12-31"
 	},
 	{
 		"Box": "1",
@@ -831,8 +842,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2070-9-4",
-		"Copyright Details": "Gerhard died 4 September 2000"
+		"Year of Author's death": "2000",
+		"End Date": "2070-12-31"
 	},
 	{
 		"Box": "1",
@@ -845,8 +856,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2036-9-19",
-		"Copyright Details": "Kinkeldey died 19 September 1966"
+		"Year of Author's death": "1966",
+		"End Date": "2036-12-31"
 	},
 	{
 		"Box": "1",
@@ -859,11 +870,11 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "no",
-		"End Date": "2021-11-13",
-		"Copyright Details": "Leichtentritt died 13 November 1951",
+		"Year of Author's death": "1951",
+		"End Date": "2021-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "public domain",
-		"URL": "https://drive.google.com/file/d/1QnmkBr0fZ92spg2n4GTx-_kfn6ob5GEj/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_6_folder_14.pdf"
 	},
 	{
 		"Box": "1",
@@ -900,8 +911,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "eBay, wilsonsemporium",
 		"Copyright": "yes",
-		"End Date": "2043-10-6",
-		"Copyright Details": "Walter died 6 October 1973"
+		"Year of Author's death": "1973",
+		"End Date": "2043-12-31"
 	},
 	{
 		"Box": "1",
@@ -950,8 +961,8 @@
 		"Hidden": "no",
 		"Acquisition Information": "Susanne Gerstenberg",
 		"Copyright": "yes",
-		"End Date": "2058-10-26",
-		"Copyright Details": "Gerstenberg died 26 October 1988",
+		"Year of Author's death": "1988",
+		"End Date": "2058-12-31",
 		"Permissions": "yes",
 		"Permissions Granter": "Susanne Gerstenberg"
 	},
@@ -965,7 +976,9 @@
 		"Image Available": "no",
 		"Hidden": "no",
 		"Acquisition Information": "Libreria Antiquaria Gozzini",
-		"Copyright": "yes"
+		"Copyright": "yes",
+		"Year of Author's death": "1977",
+		"End Date": "2047-12-31"
 	},
 	{
 		"Box": "2",
@@ -986,11 +999,11 @@
 		"Series Description": "Music manuscript",
 		"Folder Description": "Pavesi, Stefano, Alla tua quest Alma unita Gran Scena Nell'Opera il Teodoro, piano-vocal score, ca. 1812–20",
 		"Scanned": "yes",
-		"Image Available": "no",
+		"Image Available": "yes",
 		"Hidden": "no",
 		"Acquisition Information": "J & J Lubrano Music Antiquarians LLC",
 		"Copyright": "no",
-		"URL": "https://drive.google.com/file/d/1X259cXCTlH3ZPcWBnD50UxAMsxfhOUKk/view?usp=share_link"
+		"URL": "https://assets.benjaminory.com/archives/series_9_folder_1.pdf"
 	},
 	{
 		"Box": "2",
@@ -1002,7 +1015,8 @@
 		"Image Available": "yes",
 		"Hidden": "no",
 		"Acquisition Information": "Library of Walther Lipphardt, Universtätsarchiv Augsburg",
-		"Copyright": "no"
+		"Copyright": "no",
+		"URL": "https://assets.benjaminory.com/archives/series_10_folder_1.pdf"
 	},
 	{
 		"Box": "2",
