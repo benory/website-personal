@@ -13,6 +13,52 @@
     {% include modern-footer.liquid %}
 
     <script>
+      const homeSections = [...document.querySelectorAll(".modern-home > section")];
+
+      if (homeSections.length) {
+        const header = document.querySelector(".modern-site-header");
+        const navigationLinks = [...document.querySelectorAll(".modern-links a")];
+
+        const updateCurrentSection = () => {
+          const sectionMarker = header.getBoundingClientRect().bottom + 24;
+          let currentSection = "home";
+
+          homeSections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= sectionMarker) {
+              currentSection = section.id || "home";
+            }
+          });
+
+          if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+            currentSection = homeSections[homeSections.length - 1].id || "home";
+          }
+
+          navigationLinks.forEach((link) => {
+            if (link.dataset.section === currentSection) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        let sectionUpdatePending = false;
+        const scheduleSectionUpdate = () => {
+          if (sectionUpdatePending) return;
+          sectionUpdatePending = true;
+          requestAnimationFrame(() => {
+            sectionUpdatePending = false;
+            updateCurrentSection();
+          });
+        };
+
+        window.addEventListener("scroll", scheduleSectionUpdate, { passive: true });
+        window.addEventListener("resize", scheduleSectionUpdate);
+        window.addEventListener("hashchange", scheduleSectionUpdate);
+        window.addEventListener("pageshow", scheduleSectionUpdate);
+        updateCurrentSection();
+      }
+
       document.querySelectorAll(".quick-links a").forEach((link) => {
         link.addEventListener("mousedown", (event) => {
           event.preventDefault();

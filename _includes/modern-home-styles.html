@@ -106,7 +106,7 @@
 
   .modern-site-header .modern-links a:hover,
   .modern-site-header .modern-links a:focus-visible,
-  .modern-site-header .modern-links a[aria-current="page"] {
+  .modern-site-header .modern-links a[aria-current] {
     color: var(--modern-navigation-active);
     text-decoration: underline;
     text-decoration-color: currentColor;
@@ -184,7 +184,7 @@
   .modern-home .quick-links .quiet-link {
     color: var(--modern-navigation-ink);
     font-family: var(--modern-navigation-font);
-    font-size: calc(0.9375rem + var(--modern-growth) * 2.5);
+    font-size: 0.9375rem;
     font-weight: 500;
   }
 
@@ -246,7 +246,7 @@
 
   .modern-home .research-item {
     display: grid;
-    grid-template-columns: minmax(0, calc(11.25rem + var(--modern-growth) * 15)) minmax(0, 1fr);
+    grid-template-columns: minmax(0, calc(13.125rem + var(--modern-growth) * 22.5)) minmax(0, 1fr);
     gap: calc(2.125rem + var(--modern-growth) * 4);
     padding: calc(1.75rem + var(--modern-growth) * 4) 0;
     border-bottom: 1px solid var(--modern-line);
@@ -579,6 +579,12 @@
     color: var(--modern-accent);
   }
 
+  @media (min-width: 901px) {
+    .modern-home .quick-links .quiet-link {
+      font-size: calc(1.25rem + var(--modern-growth));
+    }
+  }
+
   @media (max-width: 900px) {
     .modern-links {
       gap: 24px;
@@ -642,7 +648,8 @@
 
     .modern-links {
       flex-wrap: wrap;
-      column-gap: clamp(8px, 3vw, 16px);
+      justify-content: space-between;
+      column-gap: clamp(4px, 1vw, 8px);
       row-gap: 2px;
       font-size: 16px;
       margin-top: 8px;
@@ -653,6 +660,23 @@
     .modern-site-header .modern-links a {
       min-height: 36px;
       padding: 5px 0;
+    }
+
+    .modern-site-header .modern-links a[data-section="home"] {
+      display: none;
+    }
+
+    .modern-home .quick-links {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      column-gap: 0;
+    }
+
+    .modern-home .quick-links .quiet-link {
+      min-height: 36px;
+      padding: 5px 0;
+      font-size: 1rem;
+      white-space: nowrap;
     }
 
     .modern-home .hero {
@@ -677,7 +701,11 @@
       gap: 18px;
     }
 
-    .modern-home .research-thumb,
+    .modern-home .research-thumb {
+      width: 100%;
+      max-width: 275px;
+    }
+
     .modern-home .publication-entry img {
       max-width: 230px;
     }

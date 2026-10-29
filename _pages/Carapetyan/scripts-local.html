@@ -1,402 +1,132 @@
 <script>
-
-//////////////////////////////
-//
-// buildSearchInterface --
-//
-
-function buildSearchInterface(data, selector) {
-	if (!selector) {
-		selector = "#search-interface";
-	}
-	let element = document.querySelector(selector);
-	if (!element) {
-		console.error(`Error: cannot find ${selector} element to create search interface`);
-		return;
-	}
-
-	let output = "";
-	output += buildSenderSelect(data);
-	output += buildRecipientSelect(data); 
-	output += buildYearSelect(data);
-	element.innerHTML = output;
-}
-
-
-//////////////////////////////
-//
-// displayBrowseTable --
-//
-
-function displayBrowseTable(data, selector) {
-	if (!selector) {
-		selector = "#list";
-	}
-	let element = document.querySelector(selector);
-	if (!element) {
-		console.error(`Error: cannot find ${selector} element to display work table`);
-		return;
-	}
-	let headings = [
-	  INDEX_Date,
-	  "Address (Country)",
-	  INDEX_Sender,
-	  INDEX_Recipient,
-	  INDEX_Info,
-	  "Archival Signature"
-	];
-	let contents = "";
-	contents += "<table class='browse'>\n";
-	contents += "<thead>\n";
-	contents += makeTableHeader(headings);
-	contents += "</thead>\n";
-	contents += "<tbody>\n";
-	contents += makeTableBody(headings, data);
-	contents += "</tbody>\n";
-	contents += "</table>\n";
-	element.innerHTML = contents;
-
-	displaySearchCount(searchCount);
-}
-
-//////////////////////////////
-//
-// makeTableHeader -- Generate HTML content for browse table header.
-//
-
-function makeTableHeader(headings) {
-	let output = `<th>${headings.join("</th><th>")}</th>\n`;
-	return output;
-}
-
-
-function formatDate(dateStr) {
-	if (!dateStr) return "";
-
-	let parts = dateStr.split("-");
-	let year = parseInt(parts[0]) || null;
-	let month = parts.length > 1 ? parseInt(parts[1]) : null;
-	let day = parts.length > 2 ? parseInt(parts[2]) : null;
-
-	if (!year) return "";
-
-	if (!month) {
-		return year.toString(); // Only year
-	}
-
-	if (!day) {
-		let date = new Date(year, month - 1);
-		return date.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
-	}
-
-	let date = new Date(year, month - 1, day);
-	return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-}
-
-//////////////////////////////
-//
-// makeTableBody -- Generate HTML content for browse table's body.
-//
-
-function makeTableBody(headings, data) {
-	let output = "";
-	searchCount = 0;
-	for (let i = 0; i < data.length; i++) {
-		let entry = data[i];
-		output += "<tr>";
-
-		for (let j = 0; j < headings.length; j++) {
-			let value = "";
-
-			switch (headings[j]) {
-				case "Address (Country)":
-					const address = entry[INDEX_C_Address] || "";
-					const country = entry[INDEX_C_Country] || "";
-					value = `${address}${country ? " (" + country + ")" : ""}`;
-					break;
-
-				case "Archival Signature":
-					const archive = entry[INDEX_Archive] || "";
-					const sig = entry[INDEX_Arch_Sig] || "";
-					value = `${archive}${sig ? ", " + sig : ""}`;
-					break;
-
-				default:
-					value = entry[headings[j]] || "";
-					if (headings[j] === INDEX_Date) {
-						value = formatDate(value);
-					}
-					break;
-			}
-
-			output += `<td>${value}</td>`;
-		}
-
-		output += "</tr>\n";
-		searchCount++;
-	}
-	return output;
-}
-
-
-
-
-//////////////////////////////
-//
-// buildSenderSelect --
-//
-
-function buildSenderSelect(data) {
-	let counter = {};
-	let sum = data.length;
-	for (let i=0; i<sum; i++) {
-		let entry = data[i];
-		let sender = entry[INDEX_Sender];
-		if (!sender) {
-			console.error("WARNING: ", entry, " DOES NOT HAVE A SENDER");
-			continue;
-		}
-		counter[sender] = (counter[sender] === undefined) ? 1 : counter[sender] + 1;
-	}
-
-	let slist = Object.keys(counter).sort();
-	let senderCount = slist.length;
-	let output = "<select class='sender' onchange='doSearch()'>\n";
-	output += `<option value="">Any sender [${senderCount}]</option>`;
-	for (let i=0; i<slist.length; i++) {
-		let name = slist[i];
-		let count = counter[slist[i]];
-		output += `<option value="${name}">${name} (${count})</option>`;
-	}
-	output += "</select>\n";
-	return output;
-}
-
-
-
-//////////////////////////////
-//
-// buildRecipientSelect --
-//
-
-function buildRecipientSelect(data) {
-	let counter = {};
-	let sum = data.length;
-	for (let i=0; i<sum; i++) {
-		let entry = data[i];
-		let recipient = entry[INDEX_Recipient];
-		if (!recipient) {
-			console.error("WARNING: ", entry, " DOES NOT HAVE A SENDER");
-			continue;
-		}
-		counter[recipient] = (counter[recipient] === undefined) ? 1 : counter[recipient] + 1;
-	}
-
-	let rlist = Object.keys(counter).sort();
-	let recipientCount = rlist.length;
-	let output = "<select class='recipient' onchange='doSearch()'>\n";
-	output += `<option value="">Any recipient [${recipientCount}]</option>`;
-	for (let i=0; i<rlist.length; i++) {
-		let name = rlist[i];
-		let count = counter[rlist[i]];
-		output += `<option value="${name}">${name} (${count})</option>`;
-	}
-	output += "</select>\n";
-	return output;
-}
-
-
-//////////////////////////////
-//
-// buildYearSelect --
-//
-
-function buildYearSelect(data) {
-	let counter = {};
-	let sum = data.length;
-	for (let i=0; i<sum; i++) {
-		let entry = data[i];
-		let year = entry[INDEX_Year];
-		if (!year) {
-			console.error("WARNING: ", entry, " DOES NOT HAVE A YEAR");
-			continue;
-		}
-		counter[year] = (counter[year] === undefined) ? 1 : counter[year] + 1;
-	}
-
-	let ylist = Object.keys(counter).sort();
-	let yearCount = ylist.length;
-	let output = "<select class='year' onchange='doSearch()'>\n";
-	output += `<option value="">Any year [${yearCount}]</option>`;
-	for (let i=0; i<ylist.length; i++) {
-		let year = ylist[i];
-		let count = counter[ylist[i]];
-		output += `<option value="${year}">${year} (${count})</option>`;
-	}
-	output += "</select>\n";
-	return output;
-}
-
-
-
-//////////////////////////////
-//
-// doSearch --
-//
-
-function doSearch(data) {
-	if (!data) {
-		data = METADATA;
-	}
-
-	let searchInterface = document.querySelector("#search-interface");
-	if (!searchInterface) {
-		console.log("Problem finding search interface");
-		return;
-	}
-
-	let senderField = searchInterface.querySelector("select.sender");
-	if (!senderField) {
-		console.log("Problem finding sender field in search interface");
-		return;
-	}
-	let senderQuery = senderField.value;
-
-	let recipientField = searchInterface.querySelector("select.recipient");
-	if (!recipientField) {
-		console.log("Problem finding recipient field in search interface");
-		return;
-	}
-	let recipientQuery = recipientField.value; 
-
-	let yearField = searchInterface.querySelector("select.year");
-	if (!yearField) {
-		console.log("Problem finding year field in search interface");
-		return;
-	}
-	let yearQuery = yearField.value; 
-
-	if (senderQuery) {
-		let tempdata = [];
-		for (let i=0; i<data.length; i++) {
-			let entry = data[i];
-			let sender = entry[INDEX_Sender];
-			if (sender === senderQuery) {
-				tempdata.push(entry);
-			}
-		}
-		data = tempdata;
-	}
-
-	if (recipientQuery) {
-		let tempdata = [];
-		for (let i=0; i<data.length; i++) {
-			let entry = data[i];
-			let recipient = entry[INDEX_Recipient];
-			if (recipient == recipientQuery) {
-				tempdata.push(entry);
-			}
-		}
-		data = tempdata;
-	}
-
-	if (yearQuery) {
-		let tempdata = [];
-		for (let i=0; i<data.length; i++) {
-			let entry = data[i];
-			let year = entry[INDEX_Year];
-			if (year == yearQuery) {
-				tempdata.push(entry);
-			}
-		}
-		data = tempdata;
-	}
-
-	displayBrowseTable(data);
-}
-
-//////////////////////////////
-//
-// FreeTextSearch --  Search for any text within the browse table and hide
-//    rows that do not have the searched text.
-//
-
-function FreeTextSearch(query) {
-	let tr = document.querySelectorAll("#list tbody tr");
-	let input = document.querySelector("#input");
-
-	// Use query from the input box if not provided
-	if (query) {
-		input.value = query;
-	} else {
-		query = input.value;
-	}
-
-	// If query is empty, show all rows and count them
-	if (!query) {
-		displaySearchCount(tr.length);
-		showAllBrowseRows();
-		return;
-	}
-
-	// Function to remove accents from characters
-	function removeAccents(str) {
-		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-	}
-
-	// Build regex that matches both accented and non-accented characters
-	let regexPattern = query.split("").map(char => {
-		let charWithoutAccent = removeAccents(char);
-		return `[${char}${charWithoutAccent}]`;
-	}).join("");
-
-	let regex = new RegExp(regexPattern, 'i'); // case-insensitive
-
-	let searchCount = 0;
-
-	for (let i = 0; i < tr.length; i++) {
-		let rowText = tr[i].innerText;
-
-		if (regex.test(rowText)) {
-			tr[i].style.display = "";
-			searchCount++;
-		} else {
-			tr[i].style.display = "none";
-		}
-	}
-
-	displaySearchCount(searchCount);
-}
-
-//////////////////////////////
-//
-// showAllBrowseRows -- Used to display all rows (again) in browse table when
-//    the free-text search is not being used.
-//
-
-function showAllBrowseRows() {
-	let tr = document.querySelectorAll("#list tbody tr");
-	for (let i=0; i<tr.length; i++) {
-		tr[i].style.display = "";
-	}
-}
-
-//////////////////////////////
-//
-// displaySearchCount --
-//
-
-function displaySearchCount(count) {
-	let output = "";
-	if (count == 1) {
-		output = `[${count} result]`;
-	} else {
-		output = `[${count} results]`;
-	}
-	let searchCountElement = document.querySelector("#search-count");
-	if (searchCountElement) {
-		searchCountElement.innerHTML = output;
-	}
-}
-
+(() => {
+  const normalize = (value) => String(value == null ? "" : value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en");
+  const dateFormatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const monthFormatter = new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+
+  function formatDate(value) {
+    const [year, month, day] = String(value).split("-").map(Number);
+    if (!year) return "";
+    if (!month) return String(year);
+    const date = new Date(Date.UTC(year, month - 1, day || 1));
+    return (day ? dateFormatter : monthFormatter).format(date);
+  }
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function cell(row, className) {
+    const node = element("td", className);
+    node.setAttribute("role", "cell");
+    row.append(node);
+    return node;
+  }
+
+  function makeRow(entry, formattedDate) {
+    const row = element("tr");
+    row.setAttribute("role", "row");
+    const dateCell = cell(row, "correspondence-date-cell");
+    dateCell.append(element("p", "correspondence-date", formattedDate));
+    const address = entry["Carapetyan Address"] || "";
+    const country = entry["Carapetyan Country"] || "";
+    if (address || country) {
+      const addressText = address && country ? `${address} (${country})` : address || country;
+      const addressNode = element("p", "correspondence-address");
+      addressNode.append(element("span", "correspondence-address-label", "Carapetyan’s address:"), document.createTextNode(addressText));
+      dateCell.append(addressNode);
+    }
+
+    const people = cell(row, "correspondence-people");
+    people.append(
+      element("span", "correspondence-sender-name", entry.Sender),
+      element("span", "correspondence-direction", " to "),
+      element("span", "correspondence-recipient-name", entry.Recipient)
+    );
+
+    const summary = cell(row, "correspondence-summary");
+    const summaryLabel = element("span", "correspondence-mobile-label", "Substance of correspondence");
+    summaryLabel.setAttribute("aria-hidden", "true");
+    summary.append(summaryLabel, element("p", "correspondence-summary-text", entry["Substance of Correspondence"]));
+
+    const reference = cell(row, "correspondence-reference");
+    const referenceLabel = element("span", "correspondence-mobile-label", "Archival reference");
+    referenceLabel.setAttribute("aria-hidden", "true");
+    reference.append(
+      referenceLabel,
+      element("span", "correspondence-archive", entry.Archive),
+      element("span", "correspondence-signature", entry["Archival Signature"])
+    );
+    return row;
+  }
+
+  window.initializeCorrespondenceCatalogue = (data) => {
+    const form = document.querySelector(".correspondence-controls");
+    if (!form) return;
+    const search = document.getElementById("correspondence-search");
+    const sender = document.getElementById("correspondence-sender");
+    const recipient = document.getElementById("correspondence-recipient");
+    const year = document.getElementById("correspondence-year");
+    const clear = document.getElementById("correspondence-clear");
+    const count = document.getElementById("correspondence-count");
+    const entries = document.getElementById("correspondence-entries");
+    const table = document.querySelector(".correspondence-table");
+    const empty = document.getElementById("correspondence-empty");
+
+    function populate(select, field) {
+      const values = [...new Set(data.map((entry) => entry[field]).filter(Boolean))];
+      values.sort((a, b) => String(a).localeCompare(String(b), "en", { numeric: true, sensitivity: "base" }));
+      values.forEach((value) => {
+        const option = element("option", "", value);
+        option.value = value;
+        select.append(option);
+      });
+    }
+    populate(sender, "Sender");
+    populate(recipient, "Recipient");
+    populate(year, "Year");
+
+    const records = data.map((entry) => {
+      const date = formatDate(entry.Date);
+      return {
+        entry,
+        row: makeRow(entry, date),
+        searchText: normalize([...Object.values(entry), date, `${entry.Sender} to ${entry.Recipient}`].join(" "))
+      };
+    });
+
+    function filter() {
+      const words = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+      const matches = records.filter(({ entry, searchText }) =>
+        (!sender.value || entry.Sender === sender.value) &&
+        (!recipient.value || entry.Recipient === recipient.value) &&
+        (!year.value || String(entry.Year) === year.value) &&
+        words.every((word) => searchText.includes(word))
+      );
+      const fragment = document.createDocumentFragment();
+      matches.forEach(({ row }) => fragment.append(row));
+      entries.replaceChildren(fragment);
+      count.textContent = `${matches.length.toLocaleString("en")} ${matches.length === 1 ? "entry" : "entries"}`;
+      clear.disabled = !(words.length || sender.value || recipient.value || year.value);
+      table.hidden = matches.length === 0;
+      empty.hidden = matches.length > 0;
+    }
+
+    function reset() {
+      form.reset();
+      filter();
+      search.focus();
+    }
+
+    form.addEventListener("submit", (event) => { event.preventDefault(); filter(); });
+    search.addEventListener("input", filter);
+    [sender, recipient, year].forEach((select) => select.addEventListener("change", filter));
+    clear.addEventListener("click", reset);
+    document.getElementById("correspondence-empty-clear").addEventListener("click", reset);
+    filter();
+  };
+})();
 </script>

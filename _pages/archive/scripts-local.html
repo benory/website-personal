@@ -1,227 +1,139 @@
 <script>
+  window.initializeArchiveCatalogue = function (metadata) {
+    const search = document.getElementById("archive-search");
+    const collection = document.getElementById("archive-collection");
+    const access = document.getElementById("archive-access");
+    const clear = document.getElementById("archive-clear");
+    const results = document.getElementById("archive-results");
+    const count = document.getElementById("archive-count");
+    const empty = document.getElementById("archive-empty");
 
-//////////////////////////////
-//
-// buildSearchInterface --
-//
+    const normalize = (value) => String(value || "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
 
-function buildSearchInterface(data, selector) {
-	if (!selector) {
-		selector = "#search-interface";
-	}
-	let element = document.querySelector(selector);
-	if (!element) {
-		console.error(`Error: cannot find ${selector} element to create search interface`);
-		return;
-	}
+    const onlineUrl = (entry) => {
+      try {
+        const url = new URL(entry.URL);
+        return ["https:", "http:"].includes(url.protocol) ? url.href : "";
+      } catch (error) {
+        return "";
+      }
+    };
 
-	let output = "";
-	output += buildSeriesSelect(data);
-	output += buildImageSelect(data);
-	element.innerHTML = output;
-}
+    const entries = metadata.filter((entry) => entry.Hidden === "no").map((entry) => ({
+      record: entry,
+      url: onlineUrl(entry),
+      searchText: normalize([
+        entry["Series Description"], entry["Folder Description"],
+        `Series ${entry.Series}`, `Folder ${entry.Folder}`
+      ].join(" "))
+    }));
 
+    const collections = new Map();
+    entries.forEach((entry) => {
+      const name = entry.record["Series Description"];
+      collections.set(name, (collections.get(name) || 0) + 1);
+    });
+    [...collections.keys()].sort((a, b) => a.localeCompare(b)).forEach((name) => {
+      collection.add(new Option(name, name));
+    });
 
-//////////////////////////////
-//
-// buildSeriesSelect --
-//
+    const element = (tag, className, text) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    };
 
-function buildSeriesSelect(data) {
-	let counter = {};
-	let sum = data.length;
-	for (let i=0; i<sum; i++) {
-		let entry = data[i];
-		let series = entry[INDEX_Series_Info];
-		if (!series) {
-			console.error("WARNING: ", entry, " DOES NOT HAVE A SERIES");
-			continue;
-		}
-		counter[series] = (counter[series] === undefined) ? 1 : counter[series] + 1;
-	}
+    const renderEntry = (entry) => {
+      const record = entry.record;
+      const item = element("li", "archive-entry");
+      const content = element("div", "archive-entry-content");
+      const description = String(record["Folder Description"] || "");
+      const colon = description.indexOf(":");
+      const hasContents = colon > -1 && description.includes(";");
 
-	let slist = Object.keys(counter).sort();
-	let seriesCount = slist.length;
-	let output = "<select class='series custom-select' onchange='doSearch()'>\n";
-	output += `<option value="">Subject [${seriesCount}]</option>`;
-	for (let i=0; i<slist.length; i++) {
-		let name = slist[i];
-		let count = counter[slist[i]];
-		output += `<option value="${name}">${name} (${count})</option>`;
-	}
-	output += "</select>\n";
-	return output;
-}
+      content.append(element("p", "archive-entry-title", hasContents ? description.slice(0, colon + 1) : description));
+      const reference = element("p", "archive-reference", `Series ${record.Series} · Folder ${record.Folder}`);
 
-//////////////////////////////
-//
-// buildImageSelect --
-//
+      if (hasContents) {
+        const parts = description.slice(colon + 1).split(";").map((part) => part.trim()).filter(Boolean);
+        const list = element("ul", "archive-entry-contents");
+        parts.forEach((part) => list.append(element("li", "", part)));
+        content.append(list);
+      }
 
-function buildImageSelect(data) {
-	let counter = {};
-	let sum = data.length;
-	for (let i=0; i<sum; i++) {
-		let entry = data[i];
-		let image = entry["Image Available"];
-		if (!image) {
-			console.error("WARNING: ", entry, " DOES NOT HAVE AN IMAGE AVAILABLE");
-			continue;
-		}
-		counter[image] = (counter[image] === undefined) ? 1 : counter[image] + 1;
-	}
+      const availability = element("div", "archive-access");
+      if (entry.url) {
+        const link = element("a", "", "View scan ↗");
+        link.href = entry.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", `View scan: ${description} (opens in a new tab)`);
+        availability.append(link);
+      }
+      item.append(reference, content);
+      if (entry.url) item.append(availability);
+      return item;
+    };
 
-	let ilist = Object.keys(counter).sort();
-	let output = "<select class='image custom-select' onchange='doSearch()'>\n";
-	output += `<option value="">Image available online?</option>`;
-	for (let i=0; i<ilist.length; i++) {
-		let name = ilist[i];
-		output += `<option value="${name}">${name}</option>`;
-	}
-	output += "</select>\n";
-	return output;
-}
+    const render = () => {
+      const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+      const filtered = entries.filter((entry) =>
+        terms.every((term) => entry.searchText.includes(term)) &&
+        (!collection.value || entry.record["Series Description"] === collection.value) &&
+        (!access.value || (access.value === "online" ? Boolean(entry.url) : !entry.url))
+      );
 
+      const groups = new Map();
+      filtered.forEach((entry) => {
+        const name = entry.record["Series Description"];
+        if (!groups.has(name)) groups.set(name, []);
+        groups.get(name).push(entry);
+      });
 
-//////////////////////////////
-//
-// displayBrowseTable --
-//
+      const fragment = document.createDocumentFragment();
+      let groupIndex = 0;
+      groups.forEach((groupEntries, name) => {
+        const group = element("section", "archive-collection");
+        const headingId = `archive-collection-${groupIndex++}`;
+        group.setAttribute("aria-labelledby", headingId);
+        const header = element("header", "archive-collection-header");
+        const heading = element("div");
+        heading.append(element("p", "archive-series", `Series ${groupEntries[0].record.Series}`));
+        const title = element("h2", "", name);
+        title.id = headingId;
+        heading.append(title);
+        header.append(heading);
+        const list = element("ol", "archive-entries");
+        groupEntries.forEach((entry) => list.append(renderEntry(entry)));
+        group.append(header, list);
+        fragment.append(group);
+      });
 
-function displayBrowseTable(data, selector) {
-	if (!selector) {
-		selector = "#list";
-	}
-	let element = document.querySelector(selector);
-	if (!element) {
-		console.error(`Error: cannot find ${selector} element to display work table`);
-		return;
-	}
-	let headings = [INDEX_Series, INDEX_Series_Info, INDEX_Folder, INDEX_Folder_Info];
-	let contents = "";
-	contents += "<table class='browse'>\n";
-	contents += "<thead>\n";
-	contents += makeTableHeader(headings);
-	contents += "</thead>\n";
-	contents += "<tbody>\n";
-	contents += makeTableBody(headings, data);
-	contents += "</tbody>\n";
-	contents += "</table>\n";
-	element.innerHTML = contents;
-}
+      results.replaceChildren(fragment);
+      const isFiltered = Boolean(search.value.trim() || collection.value || access.value);
+      count.textContent = isFiltered
+        ? `${filtered.length} matching ${filtered.length === 1 ? "entry" : "entries"}`
+        : "";
+      clear.disabled = !isFiltered;
+      empty.hidden = filtered.length !== 0;
+    };
 
-//////////////////////////////
-//
-// makeTableHeader -- Generate HTML content for browse table header.
-//
+    const reset = () => {
+      search.value = "";
+      collection.value = "";
+      access.value = "";
+      render();
+      search.focus();
+    };
 
-function makeTableHeader(headings) {
-	let output = `<th>${headings.join("</th><th>")}</th>\n`;
-	return output;
-}
-
-
-//////////////////////////////
-//
-// makeTableBody -- Generate HTML content for browse table's body.
-//
-
-function makeTableBody(headings, data) {
-	let output = "";
-	for (let i=0; i<data.length; i++) {
-		let entry = data[i];
-		output += "<tr>";
-		for (let i=0; i<headings.length; i++) {
-			let value = "";
-			let URL = entry["URL"];
-			if (typeof entry[headings[i]] !== "undefined") {
-				value = entry[headings[i]];
-			}
-			let hidden = entry["Hidden"];
-			if (hidden == "no"){
-				output += "<td>";
-				if (value.match(":")){
-					value = value.replace(':', '<br /><br />');
-				}
-				if (value.match(";")){
-					value = value.replace(/(;)+/g, '<br />');
-				}
-
-				if (URL){
-					if (headings[i] == INDEX_Folder_Info) {
-						output += `<a target="_blank" href="${URL}">${value}</a>`;
-					} else {
-						output += value;
-					}
-				} else {
-					output += value;	
-				}
-				output += "</td>";
-			}
-		}
-		if (output !== ""){
-			output += "</tr>\n";
-		}
-	}
-	return output;
-}
-
-
-//////////////////////////////
-//
-// doSearch --
-//
-
-function doSearch(data) {
-	if (!data) {
-		data = METADATA;
-	}
-
-	let searchInterface = document.querySelector("#search-interface");
-	if (!searchInterface) {
-		console.log("Problem finding search interface");
-		return;
-	}
-
-	let seriesField = searchInterface.querySelector("select.series");
-	if (!seriesField) {
-		console.log("Problem finding series field in search interface");
-		return;
-	}
-	let seriesQuery = seriesField.value;
-
-	let imageField = searchInterface.querySelector("select.image");
-	if (!imageField) {
-		console.log("Problem finding series field in search interface");
-		return;
-	}
-	let imageQuery = imageField.value;
-
-	if (seriesQuery) {
-		let tempdata = [];
-		for (let i=0; i<data.length; i++) {
-			let entry = data[i];
-			let series = entry[INDEX_Series_Info];
-			if (series === seriesQuery) {
-				tempdata.push(entry);
-			}
-		}
-		data = tempdata;
-	}
-
-	if (imageQuery) {
-		let tempdata = [];
-		for (let i=0; i<data.length; i++) {
-			let entry = data[i];
-			let image = entry[INDEX_Image];
-			if (image === imageQuery) {
-				tempdata.push(entry);
-			}
-		}
-		data = tempdata;
-	}
-
-	displayBrowseTable(data);
-}
-
+    document.querySelector(".archive-controls").addEventListener("submit", (event) => event.preventDefault());
+    search.addEventListener("input", render);
+    collection.addEventListener("change", render);
+    access.addEventListener("change", render);
+    clear.addEventListener("click", reset);
+    document.getElementById("archive-empty-clear").addEventListener("click", reset);
+    render();
+  };
 </script>

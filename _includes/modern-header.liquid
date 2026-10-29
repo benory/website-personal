@@ -2,19 +2,22 @@
 {% if page.url == '/' %}
   {% assign research_url = '#research' %}
   {% assign publications_url = '#publications' %}
+  {% assign news_url = '#news' %}
 {% else %}
   {% assign research_url = modern_home_url | append: '#research' %}
   {% assign publications_url = modern_home_url | append: '#publications' %}
+  {% assign news_url = modern_home_url | append: '#news' %}
 {% endif %}
 
 <header class="modern-site-header">
   <div class="modern-wrap modern-nav">
     <a class="modern-brand" href="{{ modern_home_url }}">Benjamin Ory</a>
     <nav class="modern-links" aria-label="Main navigation">
-      <a href="{{ modern_home_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>home</a>
-      <a href="{{ research_url }}">research</a>
-      <a href="{{ publications_url }}">publications</a>
-      <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>archive</a>
+      <a href="{{ modern_home_url }}" data-section="home" {% if page.url == '/' %}aria-current="page"{% endif %}>home</a>
+      <a href="{{ research_url }}" data-section="research">research</a>
+      <a href="{{ publications_url }}" data-section="publications">publications</a>
+      <a href="{{ news_url }}" data-section="news">news</a>
+      <a href="{{ '/archive/' | relative_url }}" data-section="archive" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>archive</a>
       <a href="{{ '/assets/pdf/Ory_CV.pdf' | relative_url }}">cv</a>
     </nav>
   </div>

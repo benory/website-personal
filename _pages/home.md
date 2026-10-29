@@ -59,7 +59,7 @@ permalink: /
 
         <article class="research-item">
           <a class="research-thumb" href="https://renaissancemapping.org">
-            <img src="{{ '/assets/img/Renaissance_mapping.png' | relative_url }}" alt="Mapping the Musical Renaissance interface">
+            <img src="{{ '/assets/img/renaissance-mapping-homepage.png' | relative_url }}" alt="Mapping the Musical Renaissance map interface">
           </a>
           <div class="research-copy">
             <div>
@@ -156,11 +156,7 @@ permalink: /
         <div>
           <h2 id="archive-title">Archival Materials</h2>
           <p>
-            I collect and catalogue materials related to the history of
-            musicology, early-music scholarship, and twentieth-century
-            musical life, including publicity materials for Gustave Reese's
-            <i>Music in the Middle Ages</i>, Walter Gerstenberg's unpublished
-            Habilitationsschrift, and papers for Peter Gradenwitz. High-resolution scans are available on request.
+            I collect correspondence, research papers, concert programs, and other materials relating to the history of musicology and twentieth-century musical life.
           </p>
           <p><a class="quiet-link" href="{{ '/archive/' | relative_url }}">browse archive</a></p>
         </div>
