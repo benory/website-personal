@@ -11,6 +11,8 @@
     const normalize = (value) => String(value || "")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
 
+    const plainText = (value) => String(value || "").replace(/<\/?i>/gi, "");
+
     const onlineUrl = (entry) => {
       const available = normalize(entry["Image Available"]).trim() === "yes";
       const cleared = normalize(entry.Copyright).trim() === "no" || normalize(entry.Permissions).trim() === "yes";
@@ -27,10 +29,10 @@
     const entries = metadata.filter((entry) => entry.Hidden === "no").map((entry) => ({
       record: entry,
       url: onlineUrl(entry),
-      searchText: normalize([
+      searchText: normalize(plainText([
         entry["Series Description"], entry["Folder Description"],
         `Series ${entry.Series}`, `Folder ${entry.Folder}`
-      ].join(" "))
+      ].join(" ")))
     }));
 
     const collections = new Map();
@@ -38,14 +40,25 @@
       const name = entry.record["Series Description"];
       collections.set(name, (collections.get(name) || 0) + 1);
     });
-    [...collections.keys()].sort((a, b) => a.localeCompare(b)).forEach((name) => {
-      collection.add(new Option(name, name));
+    [...collections.keys()].sort((a, b) => plainText(a).localeCompare(plainText(b))).forEach((name) => {
+      collection.add(new Option(plainText(name), name));
     });
 
     const element = (tag, className, text) => {
       const node = document.createElement(tag);
       if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
+      if (text !== undefined) {
+        const value = String(text);
+        let start = 0;
+        for (const match of value.matchAll(/<i>([\s\S]*?)<\/i>/gi)) {
+          node.append(document.createTextNode(value.slice(start, match.index)));
+          const italic = document.createElement("i");
+          italic.textContent = match[1];
+          node.append(italic);
+          start = match.index + match[0].length;
+        }
+        node.append(document.createTextNode(value.slice(start)));
+      }
       return node;
     };
 
@@ -54,14 +67,23 @@
       const item = element("li", "archive-entry");
       const content = element("div", "archive-entry-content");
       const description = String(record["Folder Description"] || "");
-      const colon = description.indexOf(":");
-      const hasContents = colon > -1 && description.includes(";");
+      const punctuation = [...description.matchAll(/<i>[\s\S]*?<\/i>|[:;]/gi)]
+        .filter((match) => match[0].length === 1);
+      const colonMatch = punctuation.find((match) => match[0] === ":");
+      const colon = colonMatch ? colonMatch.index : -1;
+      const separators = punctuation.filter((match) => match[0] === ";" && match.index > colon);
+      const hasContents = colon > -1 && separators.length > 0;
 
       content.append(element("p", "archive-entry-title", hasContents ? description.slice(0, colon + 1) : description));
       const reference = element("p", "archive-reference", `Series ${record.Series} · Folder ${record.Folder}`);
 
       if (hasContents) {
-        const parts = description.slice(colon + 1).split(";").map((part) => part.trim()).filter(Boolean);
+        let start = colon + 1;
+        const parts = [...separators, { index: description.length }].map(({ index }) => {
+          const part = description.slice(start, index).trim();
+          start = index + 1;
+          return part;
+        }).filter(Boolean);
         const list = element("ul", "archive-entry-contents");
         parts.forEach((part) => list.append(element("li", "", part)));
         content.append(list);
@@ -73,7 +95,7 @@
         link.href = entry.url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        link.setAttribute("aria-label", `View scan: ${description} (opens in a new tab)`);
+        link.setAttribute("aria-label", `View scan: ${plainText(description)} (opens in a new tab)`);
         availability.append(link);
       }
       item.append(reference, content);
